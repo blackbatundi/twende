@@ -131,44 +131,45 @@ class _OtpPage extends State<OtpPage> {
                             ),
                             AppStyle.SPACING_XL.heightBox,
                             PinCodeTextField(
-                      errorTextSpace: 0,
-                      appContext: context,
-                      length: 6,
-                      obscureText: false,
-                      autoDismissKeyboard: false,
-                      keyboardType: TextInputType.number,
-                      animationType: AnimationType.fade,
-                     // controller: sendcode,
-                      pinTheme: PinTheme(
-                        inactiveFillColor: Colors.white,
-                        selectedColor: Colors.black,
-                        borderWidth: 1,
-                        selectedFillColor: Colors.white,
-                        inactiveColor: Colors.grey.withOpacity(0.2),
-                        activeColor: Colors.grey.withOpacity(0.3),
-                        shape: PinCodeFieldShape.box,
-                        borderRadius: BorderRadius.circular(5),
-                        fieldHeight: 50,
-                        fieldWidth: 50,
-                        activeFillColor: Colors.white,
-                      ),
-                      enableActiveFill: true,
-                      inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      animationDuration: const Duration(milliseconds: 300),
-                      backgroundColor: Colors.transparent,
-                      autoFocus: true,
-                      onCompleted: (otpCode) {
-                        //_submit(otpCode);
-                      },
-                      onChanged: (value) {
-                        setState(() {});
-                      },
-                      beforeTextPaste: (text) {
-                        return true;
-                      },
-                    ),
+                              errorTextSpace: 0,
+                              appContext: context,
+                              length: 6,
+                              obscureText: false,
+                              autoDismissKeyboard: false,
+                              keyboardType: TextInputType.number,
+                              animationType: AnimationType.fade,
+                              // controller: sendcode,
+                              pinTheme: PinTheme(
+                                inactiveFillColor: Colors.white,
+                                selectedColor: Colors.black,
+                                borderWidth: 1,
+                                selectedFillColor: Colors.white,
+                                inactiveColor: Colors.grey.withOpacity(0.2),
+                                activeColor: Colors.grey.withOpacity(0.3),
+                                shape: PinCodeFieldShape.box,
+                                borderRadius: BorderRadius.circular(5),
+                                fieldHeight: 50,
+                                fieldWidth: 50,
+                                activeFillColor: Colors.white,
+                              ),
+                              enableActiveFill: true,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.digitsOnly
+                              ],
+                              animationDuration:
+                                  const Duration(milliseconds: 300),
+                              backgroundColor: Colors.transparent,
+                              autoFocus: true,
+                              onCompleted: (otpCode) {
+                                //_submit(otpCode);
+                              },
+                              onChanged: (value) {
+                                setState(() {});
+                              },
+                              beforeTextPaste: (text) {
+                                return true;
+                              },
+                            ),
                             AppStyle.SPACING_LG.heightBox,
                             CustomButton(
                               title: AppLocalizations.of(context)!.continueWord,
@@ -266,6 +267,4 @@ class _OtpPage extends State<OtpPage> {
       ),
     );
   }
-
-
 }

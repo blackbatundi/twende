@@ -10,12 +10,10 @@ class Twende extends StatefulWidget {
   const Twende({super.key});
 
   @override
-  State<Twende> createState() =>
-      _TwendeState();
+  State<Twende> createState() => _TwendeState();
 }
 
-class _TwendeState
-    extends State<Twende> {
+class _TwendeState extends State<Twende> {
   AppStyle appStyle = AppStyle();
   @override
   void didChangeDependencies() {
@@ -29,7 +27,7 @@ class _TwendeState
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      darkTheme: appStyle.darkTheme(context),
+      // darkTheme: appStyle.darkTheme(context),
       theme: appStyle.lightTheme(context),
       themeMode: Provider.of<AppSetting>(context).getThemeMode,
       localizationsDelegates: AppLocalizations.localizationsDelegates,

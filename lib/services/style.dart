@@ -6,7 +6,7 @@ class AppStyle {
   // COLOR
 
   //  Brand
-  static Color PRIMERYCOLOR = const Color.fromRGBO(96, 114, 252, 1);
+  static Color PRIMERYCOLOR = const Color.fromRGBO(239, 68, 68, 1);
 
   // Gray color
   static Color GRAY_0 = const Color.fromARGB(255, 0, 0, 0);

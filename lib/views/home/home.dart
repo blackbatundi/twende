@@ -2,9 +2,20 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:twende/services/extentions.dart';
-import 'package:twende/services/style.dart';
+import 'package:flutter/services.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+List<IconData> selectedicons = [
+  Iconsax.home_15,
+  Iconsax.task_square5,
+  Iconsax.profile_circle5,
+];
+List<IconData> unselectedicons = [
+  Iconsax.home,
+  Iconsax.task_square,
+  Iconsax.profile_circle,
+];
 
 class App extends StatefulWidget {
   static String routeName = "/app";
@@ -18,13 +29,17 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
   Timer? _timer;
   DateTime? startDate;
   DateTime? endDate;
+  TabController? _tabController;
+  String selectMenu = "home";
   @override
   void initState() {
     endDate = DateTime.now();
     startDate = endDate!.subtract(const Duration(days: 7));
+    _tabController = TabController(initialIndex: 0, length: 3, vsync: this);
     super.initState();
   }
 
+  int? selectedIndex = 0;
   @override
   void didChangeDependencies() {
     if (mounted) {
@@ -67,71 +82,138 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-   
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            children: [
-              appBar(),
-              AppStyle.SPACING_LG.heightBox,
-             
-            ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        systemNavigationBarColor: Theme.of(context).scaffoldBackgroundColor,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarColor: Theme.of(context).scaffoldBackgroundColor,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      child: SafeArea(
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Stack(
+              alignment: AlignmentDirectional.topStart,
+              children: [
+                appBar(),
+                TabBarView(
+                  controller: _tabController,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
+                    Container(),
+                    Container(),
+                    Container(),
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: bottomNavigation(),
+                ),
+              ],
+            ),
+          ),
+        ),
+        // body: SafeArea(
+        //   child: Column(
+        //     children: [
+        //       appBar(),
+        //       AppStyle.SPACING_LG.heightBox,
+        //       Stack(
+        //         children: [
+        //           TabBarView(
+        //             controller: _tabController,
+        //             physics: const NeverScrollableScrollPhysics(),
+        //             children: [
+        //               Container(),
+        //               Container(),
+        //               Container(),
+        //               Container(),
+        //             ],
+        //           ),
+        //           Align(
+        //             alignment: Alignment.bottomCenter,
+        //             child: bottomNavigation(),
+        //           ),
+        //         ],
+        //       ),
+        //     ],
+        //   ),
+        // ),
+      ),
+    );
+  }
+
+  Widget bottomNavigation() {
+    return Container(
+      height: 65,
+      padding: const EdgeInsets.only(bottom: 10),
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        border: Border(top: BorderSide(color: Theme.of(context).disabledColor)),
+      ),
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        children: List.generate(
+          selectedicons.length,
+          (index) => modelIcon(
+            selectedicon: selectedicons[index],
+            unselectedicon: unselectedicons[index],
+            index: index,
           ),
         ),
       ),
     );
   }
 
+  modelIcon({
+    IconData? selectedicon,
+    IconData? unselectedicon,
+    required index,
+  }) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+
+          _tabController!.animateTo(index);
+        });
+      },
+      borderRadius: BorderRadius.circular(30),
+      child: Stack(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(25),
+            child: Icon(
+              selectedIndex == index ? selectedicon : unselectedicon,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget appBar() {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Builder(
-          builder: (context) {
-            return InkWell(
-              onTap: () {
-                Scaffold.of(context).openDrawer();
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Icon(
-                  Icons.menu,
-                  size: 16,
-                ),
-              ),
-            );
-          },
+        Text(
+          _salutation,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).textTheme.bodySmall?.color,
+          ),
         ),
-        AppStyle.SPACING_LG.widthBox,
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              _salutation,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).textTheme.bodySmall?.color,
-              ),
-            ),
-            const Text(
-              "John Doe",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-          ],
+        const Text(
+          "John Doe",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+          ),
         ),
       ],
     );
   }
-
 }

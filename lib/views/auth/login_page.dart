@@ -1,7 +1,5 @@
-
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:twende/controllers/auth/auth_controller.dart';
 import 'package:twende/services/extentions.dart';
@@ -10,11 +8,10 @@ import 'package:twende/utils/button.dart';
 import 'package:twende/utils/widegt.dart';
 
 class LoginPage extends StatefulWidget {
-   static String routeName = "/LoginPage";
+  static String routeName = "/LoginPage";
   const LoginPage({
     super.key,
   });
-
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -25,74 +22,31 @@ class _LoginPageState extends State<LoginPage> {
   bool isPhoneSelected = false;
   @override
   Widget build(BuildContext context) {
-
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: AppStyle.SPACING_3XL,
-          ),
-          width: MediaQuery.of(context).size.width,
-          height: 180,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                "assets/icons/cups.png",
-              ),
+    return Scaffold(
+        body: SafeArea(
+      child: Column(
+        children: [
+          Text(
+            "loginWelcomeText",
+            style: TextStyle(
+              color: Theme.of(context).textTheme.displaySmall?.color,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              height: 1.5,
             ),
           ),
-        ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppStyle.SPACING_XL,
-              vertical: AppStyle.SPACING_XL,
-            ),
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(AppStyle.RADIUS_2XL),
-                topRight: Radius.circular(AppStyle.RADIUS_2XL),
-              ),
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Text(
-                    "loginWelcomeText",
-                    style: TextStyle(
-                      color: Theme.of(context).textTheme.displaySmall?.color,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      height: 1.5,
-                    ),
-                  ),
-                  AppStyle.SPACING_XL.heightBox,
-                  phoneChange(),
-                  AppStyle.SPACING_LG.heightBox,
-                  PassWordTextField(
-                    labelText: "passwordLabel",
-                    hintText: "passwordHint",
-                    icon: Iconsax.lock,
-                  ),
-                  AppStyle.SPACING_XL.heightBox,
-                  CustomButton(
-                    title: "loginWord",
-                    onTap: () {
-                    
-                    },
-                    backGroundColor: Theme.of(context).primaryColor,
-                  ),
-                 
-                  
-                  AppStyle.SPACING_LG.heightBox,
-                ],
-              ),
-            ),
+          AppStyle.SPACING_XL.heightBox,
+          phoneChange(),
+          AppStyle.SPACING_XL.heightBox,
+          CustomButton(
+            title: "loginWord",
+            onTap: () {},
+            backGroundColor: Theme.of(context).primaryColor,
           ),
-        ),
-      ],
-    );
+          AppStyle.SPACING_LG.heightBox,
+        ],
+      ),
+    ));
   }
 
   Widget phoneChange() {
@@ -134,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         AppStyle.SPACING_SM.widthBox,
                         Text(
-                          "phonNumberLabel",
+                          "phonNumber",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -176,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         AppStyle.SPACING_SM.widthBox,
                         Text(
-                          "emailLabel",
+                          "email",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -207,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.all(17.0),
-                  hintText: "phoneHintText",
+                  hintText: "Entrer votre numero telephone",
                   hintStyle: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -216,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
-                  labelText: "phonNumberLabel",
+                  labelText: "Numero telephone",
                   prefixIcon: InkWell(
                     onTap: () {
                       showCountryPicker(
@@ -256,8 +210,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               )
             : SimpleTextField(
-                labelText: "emailLabel",
-                hintText: "emailPlaceHolder",
+                labelText: "email",
+                hintText: "Entre votre email",
                 controller: authController.email,
                 icon: Icons.mail_outlined,
               ),

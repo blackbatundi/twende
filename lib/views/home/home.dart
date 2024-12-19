@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:twende/views/home/test1.dart';
 
 List<IconData> selectedicons = [
   Iconsax.home_15,
@@ -160,15 +159,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {
-                    Navigator.pushReplacementNamed(
-                                  context,
-                                   PredefinedLocationsMap.routeName,
-                                );
-                },
-                child: _optionCard(Icons.directions_car, "Order Car"),
-              ),
+              _optionCard(Icons.directions_car, "Order Car"),
               _optionCard(Icons.two_wheeler, "Order Boda"),
             ],
           ),

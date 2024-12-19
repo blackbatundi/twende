@@ -243,12 +243,12 @@
     "noMembreWord": "Veuillez ajouter au moins un membre",
     "warningWord": "Attention",
     "situationWord":"Situation de demenagement",
-    "askModifWord":"Demander modification"
-    
-
-
-
-
+    "askModifWord":"Demander modification",
+    "errorOccured": "Erreur",
+    "passwordEmpty": "Ajoutez votre mot de passe pour effectuer cette opération",
+    "phoneSignupNameError": "The phone number is empty, please hit your email adress",
+    "confirmpasswordEmpty": "Confirmez votre mot de passe pour effectuer cette opération",
+    "confirmpasswordEmpty": "Confirmez votre mot de passe pour effectuer cette opération"
 
 
     

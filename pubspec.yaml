@@ -1,13 +1,12 @@
 name: twende
 description: "A new Flutter project."
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
   flutter:
@@ -44,8 +43,6 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   change_app_package_name: ^1.4.0
 
-
-
 flutter:
   uses-material-design: true
 
@@ -78,4 +75,3 @@ flutter:
         - asset: assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf
         - asset: assets/fonts/Poppins/Poppins-Thin.ttf
         - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
-

@@ -1,16 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tujikinge_wenyewe_responsable/services/extentions.dart';
-import 'package:tujikinge_wenyewe_responsable/services/style.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:tujikinge_wenyewe_responsable/utils/functions.dart';
-import 'package:tujikinge_wenyewe_responsable/utils/widegt.dart';
-import 'package:tujikinge_wenyewe_responsable/views/activite/activite.dart';
-import 'package:tujikinge_wenyewe_responsable/views/auth/logout/logout.dart';
-import 'package:tujikinge_wenyewe_responsable/views/home/home.dart';
-import 'package:tujikinge_wenyewe_responsable/views/livret/livret.dart';
-import 'package:tujikinge_wenyewe_responsable/views/membre/membre.dart';
-import 'package:tujikinge_wenyewe_responsable/views/situation_de_demenagement/situation_de_demenagement.dart';
+import 'package:twende/utils/functions.dart';
+import 'package:twende/utils/widegt.dart';
+import 'package:twende/views/auth/logout/logout.dart';
+import 'package:twende/views/home/home.dart';
 
 const int creationDate = 1701083574643;
 
@@ -105,26 +101,22 @@ class _DrawerState extends State<DrawerApp> {
                     menu(
                       title: AppLocalizations.of(context)!.infoLivretWord,
                       onTap: () {
-                        Navigator.pushNamed(context, LivretMenage.routeName);
                       },
                     ),
                     menu(
                       title: AppLocalizations.of(context)!.activiteWord,
                       onTap: () {
-                        Navigator.pushNamed(context, Activite.routeName);
+                      
                       },
                     ),
                     menu(
                       title: AppLocalizations.of(context)!.situationWord,
                       onTap: () {
-                        Navigator.pushNamed(
-                            context, SituationdeMenage.routeName);
-                      },
+                      }
                     ),
                     menu(
                       title: AppLocalizations.of(context)!.membreWord,
                       onTap: () {
-                        Navigator.pushNamed(context, Membre.routeName);
                       },
                     ),
                     menu(title: AppLocalizations.of(context)!.settingsWord),

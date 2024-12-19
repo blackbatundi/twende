@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:twende/services/app_local.dart';
@@ -52,49 +53,47 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyle.PRIMERYCOLOR,
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppStyle.SPACING_LG,
-            vertical: AppStyle.SPACING_SM,
-          ),
-          child: Column(
-            children: [
-              Expanded(
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 180,
-                        height: 180,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                      10.heightBox,
-                      Text(
-                        AppLocalizations.of(context)!.tujikingeWord,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ],
-                  ),
+        child: Stack(
+          children: [
+            Positioned(
+              left: -140,
+              child: FadeInLeft(child: container()),
+            ),
+            Positioned(
+              right: -140,
+              bottom: 0,
+              child: FadeInRight(
+                child: container(),
+              ),
+            ),
+            Center(
+              child: Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: AppStyle.SPACING_3XL,
+                ),
+                width: MediaQuery.of(context).size.width,
+                height: 230,
+                decoration: const BoxDecoration(
+                 
                 ),
               ),
-              15.heightBox,
-              Text(
-                AppLocalizations.of(context)!.upperzSolgan,
-                style: const TextStyle(
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
+
+  Widget container() {
+  return Container(
+    height: 200,
+    width: 200,
+    decoration: BoxDecoration(
+      color: Colors.white.withOpacity(.03),
+      shape: BoxShape.circle,
+    ),
+  );
+}
 }

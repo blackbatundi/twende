@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:twende/services/app_local.dart';
 import 'package:twende/services/style.dart';
 import 'package:twende/views/auth/login_page.dart';
@@ -50,48 +51,57 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppStyle.PRIMERYCOLOR,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned(
-              left: -140,
-              child: FadeInLeft(child: container()),
-            ),
-            Positioned(
-              right: -140,
-              bottom: 0,
-              child: FadeInRight(
-                child: container(),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        systemNavigationBarColor: Theme.of(context).primaryColor,
+        systemNavigationBarIconBrightness: Brightness.light,
+        statusBarColor: Theme.of(context).primaryColor,
+        statusBarIconBrightness: Brightness.light,
+      ),
+      child: Scaffold(
+        backgroundColor: AppStyle.PRIMERYCOLOR,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Positioned(
+                left: -140,
+                child: FadeInLeft(child: container()),
               ),
-            ),
-            Center(
-              child: Container(
-                margin: EdgeInsets.symmetric(
-                  horizontal: AppStyle.SPACING_3XL,
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 230,
-                decoration: const BoxDecoration(
-                 
+              Positioned(
+                right: -140,
+                bottom: 0,
+                child: FadeInRight(
+                  child: container(),
                 ),
               ),
-            ),
-          ],
+              Center(
+                child: Container(
+                  margin: EdgeInsets.symmetric(
+                    horizontal: AppStyle.SPACING_3XL,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Theme.of(context).disabledColor.withOpacity(.5),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget container() {
-  return Container(
-    height: 200,
-    width: 200,
-    decoration: BoxDecoration(
-      color: Colors.white.withOpacity(.03),
-      shape: BoxShape.circle,
-    ),
-  );
-}
+    return Container(
+      height: 200,
+      width: 200,
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(.2),
+        shape: BoxShape.circle,
+      ),
+    );
+  }
 }

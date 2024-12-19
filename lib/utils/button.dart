@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:twende/controllers/bloc/state.dart';
 import 'package:twende/services/style.dart';
@@ -23,7 +22,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(30),
+      borderRadius: BorderRadius.circular(15),
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.symmetric(
@@ -33,7 +32,7 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: backGroundColor,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(15),
         ),
         child: state is LOADING
             ? SizedBox(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:twende/controllers/auth/auth_controller.dart';
 import 'package:twende/controllers/bloc/bloc.dart';
 import 'package:twende/controllers/bloc/state.dart';
@@ -9,8 +10,8 @@ import 'package:twende/services/extentions.dart';
 import 'package:twende/services/style.dart';
 import 'package:twende/utils/app_indicator.dart';
 import 'package:twende/utils/button.dart';
-import 'package:twende/utils/widegt.dart';
 import 'package:twende/views/auth/login_page.dart';
+import 'package:twende/views/home/home.dart';
 
 class OtpPage extends StatefulWidget {
   static String routeName = "/OtpPage";
@@ -31,6 +32,7 @@ class _OtpPage extends State<OtpPage> {
     super.initState();
   }
 
+  bool isPhoneSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,14 +130,45 @@ class _OtpPage extends State<OtpPage> {
                               ),
                             ),
                             AppStyle.SPACING_XL.heightBox,
-                            SimpleTextField(
-                              labelText:
-                                  AppLocalizations.of(context)!.cardNumberWord,
-                              hintText:
-                                  AppLocalizations.of(context)!.cardNumberWord,
-                              icon: Iconsax.message,
-                              controller: authController.email,
-                            ),
+                            PinCodeTextField(
+                      errorTextSpace: 0,
+                      appContext: context,
+                      length: 6,
+                      obscureText: false,
+                      autoDismissKeyboard: false,
+                      keyboardType: TextInputType.number,
+                      animationType: AnimationType.fade,
+                     // controller: sendcode,
+                      pinTheme: PinTheme(
+                        inactiveFillColor: Colors.white,
+                        selectedColor: Colors.black,
+                        borderWidth: 1,
+                        selectedFillColor: Colors.white,
+                        inactiveColor: Colors.grey.withOpacity(0.2),
+                        activeColor: Colors.grey.withOpacity(0.3),
+                        shape: PinCodeFieldShape.box,
+                        borderRadius: BorderRadius.circular(5),
+                        fieldHeight: 50,
+                        fieldWidth: 50,
+                        activeFillColor: Colors.white,
+                      ),
+                      enableActiveFill: true,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
+                      animationDuration: const Duration(milliseconds: 300),
+                      backgroundColor: Colors.transparent,
+                      autoFocus: true,
+                      onCompleted: (otpCode) {
+                        //_submit(otpCode);
+                      },
+                      onChanged: (value) {
+                        setState(() {});
+                      },
+                      beforeTextPaste: (text) {
+                        return true;
+                      },
+                    ),
                             AppStyle.SPACING_LG.heightBox,
                             CustomButton(
                               title: AppLocalizations.of(context)!.continueWord,
@@ -144,7 +177,7 @@ class _OtpPage extends State<OtpPage> {
                               onTap: () {
                                 Navigator.pushReplacementNamed(
                                   context,
-                                  LoginPage.routeName,
+                                  App.routeName,
                                 );
                                 // if (authController
                                 //     .validateGetPassword(context)) {
@@ -233,4 +266,6 @@ class _OtpPage extends State<OtpPage> {
       ),
     );
   }
+
+
 }

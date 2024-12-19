@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:tujikinge_wenyewe_responsable/controllers/bloc/state.dart';
-import 'package:tujikinge_wenyewe_responsable/services/style.dart';
+import 'package:twende/controllers/bloc/state.dart';
+import 'package:twende/services/style.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;

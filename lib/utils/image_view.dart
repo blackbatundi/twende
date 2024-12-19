@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:tujikinge_wenyewe_responsable/services/style.dart';
+import 'package:twende/services/style.dart';
 
 class ShowImage extends StatelessWidget {
   final File? imageFile;

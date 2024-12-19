@@ -2,9 +2,8 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:tujikinge_wenyewe_responsable/services/extentions.dart';
-import 'package:tujikinge_wenyewe_responsable/services/style.dart';
-import 'package:tujikinge_wenyewe_responsable/views/home/drawer.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 
 bool isDarkMode(BuildContext context) {
   return Theme.of(context).brightness == Brightness.dark;
@@ -348,97 +347,5 @@ class _PassWordTextFieldState extends State<PassWordTextField> {
   }
 }
 
-Widget drawer(BuildContext context) {
-  return Drawer(
-    width: MediaQuery.of(context).size.width - 50,
-    child: const DrawerApp(),
-  );
-}
 
-Widget footer(BuildContext context) {
-  return Row(
-    children: [
-      Expanded(
-        child: _buildSegment(
-          context: context,
-          label: "Unite",
-          backgroundColor:
-              isDarkMode(context) ? const Color(0xFF4F1412) : Colors.pink[100],
-          textColor: isDarkMode(context) ? Colors.white : Colors.black,
-        ),
-      ),
-      Expanded(
-        child: _buildSegment(
-          context: context,
-          label: "Controle",
-          backgroundColor:
-              isDarkMode(context) ? const Color(0xFF5E4B12) : Colors.amber[100],
-          textColor: isDarkMode(context) ? Colors.white : Colors.black,
-        ),
-      ),
-      Expanded(
-        child: _buildSegment(
-          context: context,
-          label: "Surveillance",
-          backgroundColor:
-              isDarkMode(context) ? const Color(0xFF111832) : Colors.blue[100],
-          textColor: isDarkMode(context) ? Colors.white : Colors.black,
-        ),
-      ),
-    ],
-  );
-}
 
-Widget _buildSegment(
-    {String? label,
-    Color? backgroundColor,
-    Color? textColor,
-    BuildContext? context}) {
-  return Container(
-    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-    decoration: BoxDecoration(
-      color: backgroundColor,
-      borderRadius: BorderRadius.horizontal(
-        left: label == "Unite" ? const Radius.circular(20) : Radius.zero,
-        right:
-            label == "Surveillance" ? const Radius.circular(20) : Radius.zero,
-      ),
-    ),
-    child: Text(
-      textAlign: TextAlign.center,
-      label!,
-      style: TextStyle(
-        color: textColor,
-        fontSize: 12,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-  );
-}
-
-Widget commonModel(
-    {required String title,
-    required String value,
-    required BuildContext context}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        title,
-        style: TextStyle(
-          fontSize: 12,
-          color: Theme.of(context).textTheme.bodySmall?.color,
-        ),
-      ),
-      AppStyle.SPACING_XS.heightBox,
-      Text(
-        overflow: TextOverflow.ellipsis,
-        value,
-        style: const TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.bold,
-        ),
-      )
-    ],
-  );
-}

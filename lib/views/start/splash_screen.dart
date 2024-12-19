@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:twende/services/app_local.dart';
 import 'package:twende/services/extentions.dart';
 import 'package:twende/services/style.dart';
-import 'package:twende/views/auth/otp_page.dart';
+import 'package:twende/views/auth/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splash_screen";
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
         milliseconds: 1500,
       ),
       () async {
-        Navigator.pushReplacementNamed(context, OtpPage.routeName);
+        Navigator.pushReplacementNamed(context, LoginPage.routeName);
 
         // UserPref token = UserPref();
         // token = AppPref.getUserInfo();

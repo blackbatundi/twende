@@ -119,12 +119,12 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "Twende",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.red,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           const SizedBox(height: 16),
@@ -195,7 +195,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return Container(
       height: 150,
       decoration: BoxDecoration(
-        color: Colors.red[400],
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -230,7 +230,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      foregroundColor: Colors.red,
+                      foregroundColor: Theme.of(context).primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),

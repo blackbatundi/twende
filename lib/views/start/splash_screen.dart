@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:tujikinge_wenyewe_responsable/services/app_local.dart';
-import 'package:tujikinge_wenyewe_responsable/services/extentions.dart';
-import 'package:tujikinge_wenyewe_responsable/services/style.dart';
-import 'package:tujikinge_wenyewe_responsable/utils/widegt.dart';
-import 'package:tujikinge_wenyewe_responsable/views/auth/otp_page.dart';
+import 'package:twende/services/app_local.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/views/auth/otp_page.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splash_screen";
@@ -72,12 +71,6 @@ class _SplashScreenState extends State<SplashScreen> {
                         decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: AssetImage(
-                              "assets/icons/logo.png",
-                            ),
-                            fit: BoxFit.cover,
-                          ),
                         ),
                       ),
                       10.heightBox,
@@ -91,7 +84,6 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
               ),
-              footer(context),
               15.heightBox,
               Text(
                 AppLocalizations.of(context)!.upperzSolgan,

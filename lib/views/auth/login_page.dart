@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:tujikinge_wenyewe_responsable/controllers/auth/auth_controller.dart';
-import 'package:tujikinge_wenyewe_responsable/controllers/bloc/bloc.dart';
-import 'package:tujikinge_wenyewe_responsable/controllers/bloc/event.dart';
-import 'package:tujikinge_wenyewe_responsable/controllers/bloc/state.dart';
-import 'package:tujikinge_wenyewe_responsable/services/extentions.dart';
-import 'package:tujikinge_wenyewe_responsable/services/shared_prefs.dart';
-import 'package:tujikinge_wenyewe_responsable/services/style.dart';
-import 'package:tujikinge_wenyewe_responsable/utils/app_indicator.dart';
-import 'package:tujikinge_wenyewe_responsable/utils/button.dart';
-import 'package:tujikinge_wenyewe_responsable/utils/widegt.dart';
-import 'package:tujikinge_wenyewe_responsable/views/home/home.dart';
+import 'package:twende/controllers/auth/auth_controller.dart';
+import 'package:twende/controllers/bloc/bloc.dart';
+import 'package:twende/controllers/bloc/event.dart';
+import 'package:twende/controllers/bloc/state.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/shared_prefs.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/app_indicator.dart';
+import 'package:twende/utils/button.dart';
+import 'package:twende/utils/widegt.dart';
+import 'package:twende/views/home/home.dart';
 
 class LoginPage extends StatefulWidget {
   static String routeName = "/loginPage";
@@ -119,11 +119,6 @@ class _LoginPage extends State<LoginPage> {
                               decoration: const BoxDecoration(
                                 color: Colors.white,
                                 shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    "assets/icons/logo.png",
-                                  ),
-                                ),
                               ),
                             ),
                             10.heightBox,
@@ -300,7 +295,6 @@ class _LoginPage extends State<LoginPage> {
                   ),
                 ),
               ),
-              footer(context),
               15.heightBox,
               Text(
                 AppLocalizations.of(context)!.upperzSolgan,

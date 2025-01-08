@@ -48,15 +48,15 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
                   ),
                 ],
               ),
-              // child: GoogleMap(
-              //   onMapCreated: (controller) {
-              //     mapController = controller;
-              //   },
-              //   initialCameraPosition: CameraPosition(
-              //     target: _initialPosition,
-              //     zoom: 12.0,
-              //   ),
-              // ),
+              child: GoogleMap(
+                onMapCreated: (controller) {
+                  mapController = controller;
+                },
+                initialCameraPosition: CameraPosition(
+                  target: _initialPosition,
+                  zoom: 12.0,
+                ),
+              ),
             ),
           ),
           Padding(

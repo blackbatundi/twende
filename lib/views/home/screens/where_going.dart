@@ -7,7 +7,6 @@ class WhereAreYouGoingScreen extends StatefulWidget {
   static String routeName = "/WhereAreYouGoingScreen";
 
   const WhereAreYouGoingScreen({super.key});
-
   @override
   _WhereAreYouGoingScreenState createState() => _WhereAreYouGoingScreenState();
 }
@@ -35,27 +34,13 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              height: 250,
-              decoration: BoxDecoration(
-                color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(.16),
-                    offset: const Offset(0, 3),
-                    blurRadius: 5,
-                  ),
-                ],
-              ),
-              child: GoogleMap(
-                onMapCreated: (controller) {
-                  mapController = controller;
-                },
-                initialCameraPosition: CameraPosition(
-                  target: _initialPosition,
-                  zoom: 12.0,
-                ),
+            child: GoogleMap(
+              onMapCreated: (controller) {
+                mapController = controller;
+              },
+              initialCameraPosition: CameraPosition(
+                target: _initialPosition,
+                zoom: 14.0,
               ),
             ),
           ),
@@ -67,7 +52,7 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
                 TextField(
                   decoration: InputDecoration(
                     hintText: 'Search location',
-                    prefixIcon: const Icon(Icons.search),
+                    prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -76,29 +61,28 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
                     fillColor: Colors.grey.shade200,
                   ),
                 ),
-                const SizedBox(height: 20),
-                Expanded(
+                SizedBox(height: 20),
+                // Wrapping the ListView with a fixed height
+                SizedBox(
+                  height: 200, // Adjust height as needed
                   child: ListView(
                     children: [
                       ListTile(
-                        leading:
-                            const Icon(Icons.location_on, color: Colors.blue),
-                        title: const Text('Lubumbashi'),
-                        subtitle: const Text('Haut-Katanga, Congo'),
+                        leading: Icon(Icons.location_on, color: Colors.blue),
+                        title: Text('Lubumbashi'),
+                        subtitle: Text('Haut-Katanga, Congo'),
                         onTap: () {},
                       ),
                       ListTile(
-                        leading:
-                            const Icon(Icons.location_on, color: Colors.blue),
-                        title: const Text('Kinshasa'),
-                        subtitle: const Text('Kinshasa, Congo'),
+                        leading: Icon(Icons.location_on, color: Colors.blue),
+                        title: Text('Kinshasa'),
+                        subtitle: Text('Kinshasa, Congo'),
                         onTap: () {},
                       ),
                       ListTile(
-                        leading:
-                            const Icon(Icons.location_on, color: Colors.blue),
-                        title: const Text('Goma'),
-                        subtitle: const Text('North Kivu, Congo'),
+                        leading: Icon(Icons.location_on, color: Colors.blue),
+                        title: Text('Goma'),
+                        subtitle: Text('North Kivu, Congo'),
                         onTap: () {},
                       ),
                     ],

@@ -22,7 +22,7 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
+        title: const Text(
           'Where are you going?',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
@@ -48,7 +48,7 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
                 TextField(
                   decoration: InputDecoration(
                     hintText: 'Search location',
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: const Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -57,26 +57,29 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
                     fillColor: Colors.grey.shade200,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Expanded(
                   child: ListView(
                     children: [
                       ListTile(
-                        leading: Icon(Icons.location_on, color: Colors.blue),
-                        title: Text('Lubumbashi'),
-                        subtitle: Text('Haut-Katanga, Congo'),
+                        leading:
+                            const Icon(Icons.location_on, color: Colors.blue),
+                        title: const Text('Lubumbashi'),
+                        subtitle: const Text('Haut-Katanga, Congo'),
                         onTap: () {},
                       ),
                       ListTile(
-                        leading: Icon(Icons.location_on, color: Colors.blue),
-                        title: Text('Kinshasa'),
-                        subtitle: Text('Kinshasa, Congo'),
+                        leading:
+                            const Icon(Icons.location_on, color: Colors.blue),
+                        title: const Text('Kinshasa'),
+                        subtitle: const Text('Kinshasa, Congo'),
                         onTap: () {},
                       ),
                       ListTile(
-                        leading: Icon(Icons.location_on, color: Colors.blue),
-                        title: Text('Goma'),
-                        subtitle: Text('North Kivu, Congo'),
+                        leading:
+                            const Icon(Icons.location_on, color: Colors.blue),
+                        title: const Text('Goma'),
+                        subtitle: const Text('North Kivu, Congo'),
                         onTap: () {},
                       ),
                     ],

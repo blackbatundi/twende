@@ -35,7 +35,7 @@ dependencies:
   calendar_date_picker2: 0.4.0
   mime: ^2.0.0
   pin_code_fields: ^7.4.0
-  google_maps_flutter: ^2.2.5 
+  google_maps_flutter: ^2.6.1
 
 dev_dependencies:
   flutter_test:

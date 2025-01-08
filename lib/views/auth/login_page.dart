@@ -231,7 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 15.heightBox,
                 Text(
-                  AppLocalizations.of(context)!.upperzSolgan,
+                  AppLocalizations.of(context)!.blackSolgan,
                   style: const TextStyle(
                     fontSize: 12,
                   ),

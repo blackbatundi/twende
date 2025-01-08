@@ -54,7 +54,7 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
                 },
                 initialCameraPosition: CameraPosition(
                   target: _initialPosition,
-                  zoom: 14.0,
+                  zoom: 12.0,
                 ),
               ),
             ),

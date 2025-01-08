@@ -1,8 +1,12 @@
 // Screen 1: Where Are You Going?
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class WhereAreYouGoingScreen extends StatefulWidget {
+  const WhereAreYouGoingScreen({super.key});
+
   @override
   _WhereAreYouGoingScreenState createState() => _WhereAreYouGoingScreenState();
 }
@@ -10,7 +14,7 @@ class WhereAreYouGoingScreen extends StatefulWidget {
 class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
   late GoogleMapController mapController;
 
-  final LatLng _initialPosition = LatLng(-11.664, 27.479);
+  final LatLng _initialPosition = const LatLng(-11.664, 27.479);
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 // Screen 1: Where Are You Going?
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class WhereAreYouGoingScreen extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(

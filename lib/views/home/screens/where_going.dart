@@ -1,4 +1,3 @@
-
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
@@ -34,13 +33,27 @@ class _WhereAreYouGoingScreenState extends State<WhereAreYouGoingScreen> {
       body: Column(
         children: [
           Expanded(
-            child: GoogleMap(
-              onMapCreated: (controller) {
-                mapController = controller;
-              },
-              initialCameraPosition: CameraPosition(
-                target: _initialPosition,
-                zoom: 14.0,
+            child: Container(
+              height: 250,
+              decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.16),
+                    offset: const Offset(0, 3),
+                    blurRadius: 5,
+                  ),
+                ],
+              ),
+              child: GoogleMap(
+                onMapCreated: (controller) {
+                  mapController = controller;
+                },
+                initialCameraPosition: CameraPosition(
+                  target: _initialPosition,
+                  zoom: 14.0,
+                ),
               ),
             ),
           ),

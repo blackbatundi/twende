@@ -21,11 +21,11 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
   void initState() {
     super.initState();
     _polylines.add(
-     const Polyline(
-        polylineId: const PolylineId('route'),
+      const Polyline(
+        polylineId: PolylineId('route'),
         color: Colors.red,
         width: 3,
-        points:  [
+        points: [
           _birereLocation,
           _lechaletLocation,
         ],
@@ -97,7 +97,8 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SelectCar()),
+                      MaterialPageRoute(
+                          builder: (context) => const SelectCar()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

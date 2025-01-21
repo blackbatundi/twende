@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'screen2.dart';
+import 'selectedCar.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({super.key});

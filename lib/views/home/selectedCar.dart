@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:twende/views/home/payWith.dart';
-import 'pickedLocalisation.dart';
 
 class SelectCar extends StatefulWidget {
   const SelectCar({super.key});
@@ -22,11 +21,11 @@ class _SelectCarState extends State<SelectCar> {
   void initState() {
     super.initState();
     _polylines.add(
-      Polyline(
-        polylineId: const PolylineId('route'),
+      const Polyline(
+        polylineId: PolylineId('route'),
         color: Colors.red,
         width: 3,
-        points: const [
+        points: [
           _birereLocation,
           _lechaletLocation,
         ],

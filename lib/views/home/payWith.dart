@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:twende/views/home/driver_found.dart';
-import 'package:twende/views/home/tripe/tripe_detail.dart';
 
 class PayWith extends StatefulWidget {
   const PayWith({super.key});

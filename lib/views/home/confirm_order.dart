@@ -77,8 +77,8 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
               ],
             ),
           ),
-          Text("Lechalet"),
-          Text("Comfort FC 45000"),
+          const Text("Lechalet"),
+          const Text("Comfort FC 45000"),
           const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
@@ -93,29 +93,6 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
             ),
             child: const Text('Select car'),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildRideOption(
-      String title, String time, String price, IconData icon) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        children: [
-          Icon(icon),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title),
-                Text(time),
-              ],
-            ),
-          ),
-          Text(price),
         ],
       ),
     );

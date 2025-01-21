@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/views/home/driver_found.dart';
+import 'package:twende/views/home/tripe/tripe_detail.dart';
 
 class PayWith extends StatefulWidget {
   const PayWith({super.key});
@@ -26,7 +28,7 @@ class _PayWithState extends State<PayWith> {
         polylineId: PolylineId('route'),
         color: Colors.red,
         width: 3,
-        points:  [
+        points: [
           _birereLocation,
           _lechaletLocation,
         ],
@@ -87,10 +89,11 @@ class _PayWithState extends State<PayWith> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const Screen2()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DriverFound()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,

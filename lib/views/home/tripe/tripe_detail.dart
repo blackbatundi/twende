@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Screen6 extends StatefulWidget {
+class TripeDetail extends StatefulWidget {
+  const TripeDetail({super.key});
+
   @override
-  State<Screen6> createState() => _Screen6State();
+  State<TripeDetail> createState() => _TripeDetailState();
 }
 
-class _Screen6State extends State<Screen6> {
+class _TripeDetailState extends State<TripeDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

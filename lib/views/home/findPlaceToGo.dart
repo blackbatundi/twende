@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Screen5 extends StatefulWidget {
-  const Screen5({super.key});
+class FindPlaceToGo extends StatefulWidget {
+  const FindPlaceToGo({super.key});
 
   @override
-  State<Screen5> createState() => _Screen5State();
+  State<FindPlaceToGo> createState() => _FindPlaceToGoState();
 }
 
-class _Screen5State extends State<Screen5> {
+class _FindPlaceToGoState extends State<FindPlaceToGo> {
   late GoogleMapController mapController;
 
   @override

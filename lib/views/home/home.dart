@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:twende/views/home/payWith.dart';
 import 'package:twende/views/home/findPlaceToGo.dart';
-import 'package:twende/views/home/screens/where_going.dart';
 
 List<IconData> selectedicons = [
   Iconsax.home_15,
@@ -163,15 +161,10 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                  // onTap: () {
-                  //         Navigator.pushNamed(
-                  //             context, WhereAreYouGoingScreen.routeName);
-                  //       },
-
                   onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const WhereAreYouGoingScreen(),
+                          builder: (context) => const FindPlaceToGo(),
                         ),
                       ),
                   child: _optionCard(

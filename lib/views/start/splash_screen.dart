@@ -61,46 +61,20 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Scaffold(
         backgroundColor: AppStyle.PRIMERYCOLOR,
         body: SafeArea(
-          child: Stack(
-            children: [
-              Positioned(
-                left: -140,
-                child: FadeInLeft(child: container()),
+          child: Center(
+            child: Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: AppStyle.SPACING_3XL,
               ),
-              Positioned(
-                right: -140,
-                bottom: 0,
-                child: FadeInRight(
-                  child: container(),
-                ),
+              width: MediaQuery.of(context).size.width,
+              height: 150,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Theme.of(context).disabledColor.withOpacity(.5),
               ),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: AppStyle.SPACING_3XL,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Theme.of(context).disabledColor.withOpacity(.5),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget container() {
-    return Container(
-      height: 200,
-      width: 200,
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(.2),
-        shape: BoxShape.circle,
       ),
     );
   }

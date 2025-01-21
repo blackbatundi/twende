@@ -1,8 +1,4 @@
-import 'package:easy_agri/services/extentions.dart';
-import 'package:easy_agri/services/style.dart';
-import 'package:easy_agri/utils/functions.dart';
-import 'package:easy_agri/utils/widegt.dart';
-import 'package:easy_agri/views/setting/logout/logout.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:iconsax/iconsax.dart';

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/views/home/payWith.dart';
 import 'pickedLocalisation.dart';
 
-class Screen2 extends StatefulWidget {
-  const Screen2({super.key});
+class SelectCar extends StatefulWidget {
+  const SelectCar({super.key});
 
   @override
-  State<Screen2> createState() => _Screen2State();
+  State<SelectCar> createState() => _SelectCarState();
 }
 
-class _Screen2State extends State<Screen2> {
+class _SelectCarState extends State<SelectCar> {
   late GoogleMapController mapController;
   final Set<Polyline> _polylines = {};
   final Set<Marker> _markers = {};
@@ -106,7 +107,7 @@ class _Screen2State extends State<Screen2> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Screen3()),
+                      MaterialPageRoute(builder: (context) => const PayWith()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -123,7 +124,8 @@ class _Screen2State extends State<Screen2> {
     );
   }
 
-  Widget _buildRideOption(String title, String time, String price, IconData icon) {
+  Widget _buildRideOption(
+      String title, String time, String price, IconData icon) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(

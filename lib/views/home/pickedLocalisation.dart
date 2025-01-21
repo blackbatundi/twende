@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:twende/views/home/selectedCar.dart';
 
-class Screen3 extends StatefulWidget {
-  const Screen3({super.key});
+class LocalisationPicked extends StatefulWidget {
+  const LocalisationPicked({super.key});
 
   @override
-  State<Screen3> createState() => _Screen3State();
+  State<LocalisationPicked> createState() => _LocalisationPickedState();
 }
 
-class _Screen3State extends State<Screen3> {
+class _LocalisationPickedState extends State<LocalisationPicked> {
   late GoogleMapController mapController;
   final Set<Polyline> _polylines = {};
   final Set<Marker> _markers = {};
@@ -97,7 +97,7 @@ class _Screen3State extends State<Screen3> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Screen2()),
+                      MaterialPageRoute(builder: (context) => const SelectCar()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

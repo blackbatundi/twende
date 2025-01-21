@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'selectedCar.dart';
 
-class Screen1 extends StatefulWidget {
-  const Screen1({super.key});
+class PayWith extends StatefulWidget {
+  const PayWith({super.key});
 
   @override
-  State<Screen1> createState() => _Screen1State();
+  State<PayWith> createState() => _PayWithState();
 }
 
-class _Screen1State extends State<Screen1> {
+class _PayWithState extends State<PayWith> {
   late GoogleMapController mapController;
   final Set<Polyline> _polylines = {};
   final Set<Marker> _markers = {};
 
-  static const LatLng _birereLocation = LatLng(-1.6777, 29.2285); // Birere, Goma
-  static const LatLng _lechaletLocation = LatLng(-1.6647, 29.2285); // Approximate Lechalet location
+  static const LatLng _birereLocation =
+      LatLng(-1.6777, 29.2285); // Birere, Goma
+  static const LatLng _lechaletLocation =
+      LatLng(-1.6647, 29.2285); // Approximate Lechalet location
 
   @override
   void initState() {
@@ -86,10 +88,10 @@ class _Screen1State extends State<Screen1> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Screen2()),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => const Screen2()),
+                    // );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,

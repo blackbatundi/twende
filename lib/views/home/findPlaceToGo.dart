@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/views/home/pickedLocalisation.dart';
 
 class FindPlaceToGo extends StatefulWidget {
   const FindPlaceToGo({super.key});
@@ -62,7 +63,15 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                _buildLocationItem('Lechalet', 'Av. de la paix, Goma'),
+                InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LocalisationPicked(),
+                          ),
+                        ),
+                    child:
+                        _buildLocationItem('Lechalet', 'Av. de la paix, Goma')),
                 _buildLocationItem('Kivu', 'Av. lac kivu, Goma'),
               ],
             ),
@@ -77,7 +86,6 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
       leading: const Icon(Icons.location_on_outlined),
       title: Text(title),
       subtitle: Text(subtitle),
-      onTap: () {},
     );
   }
 }

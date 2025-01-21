@@ -88,7 +88,7 @@ class _SearchNearByState extends State<SearchNearBy> {
                 }
               });
             },
-            child: Text('Increase Progress'),
+            child:const Text('Increase Progress'),
           ),
           const SizedBox(height: 10),
           ElevatedButton(

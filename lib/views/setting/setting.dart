@@ -1,7 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/services/widget.dart';
+import 'package:twende/utils/functions.dart';
+import 'package:twende/views/setting/logout/logout.dart';
 
 class Settings extends StatefulWidget {
   static String routeName = "/Settings";

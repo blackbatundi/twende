@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:twende/views/home/payWith.dart';
+import 'package:twende/views/home/search_neary_by.dart';
 
 class ConfirmOrder extends StatefulWidget {
   const ConfirmOrder({super.key});
@@ -77,46 +78,21 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
               ],
             ),
           ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                _buildRideOption(
-                  'Comfort',
-                  '15 min',
-                  'FC 45000',
-                  Icons.car_rental,
-                ),
-                _buildRideOption(
-                  'XL',
-                  '20 min',
-                  'FC 55000',
-                  Icons.car_rental,
-                ),
-                _buildRideOption(
-                  'Boda',
-                  'Busy',
-                  'FC 5000',
-                  Icons.motorcycle,
-                ),
-                const SizedBox(height: 10),
-                const Text('Paying with'),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const PayWith()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  child: const Text('Select car'),
-                ),
-              ],
+          Text("Lechalet"),
+          Text("Comfort FC 45000"),
+          const SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchNearBy()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              minimumSize: const Size(double.infinity, 50),
             ),
+            child: const Text('Select car'),
           ),
         ],
       ),

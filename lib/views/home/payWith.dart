@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/views/home/confirmOrder.dart';
 import 'package:twende/views/home/driver_found.dart';
 
 class PayWith extends StatefulWidget {
@@ -91,7 +92,7 @@ class _PayWithState extends State<PayWith> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const DriverFound()),
+                          builder: (context) => const ConfirmOrder()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

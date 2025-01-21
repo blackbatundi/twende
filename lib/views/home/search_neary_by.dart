@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/views/home/driver_found.dart';
 
 class SearchNearBy extends StatefulWidget {
   const SearchNearBy({super.key});
@@ -88,6 +89,20 @@ class _SearchNearByState extends State<SearchNearBy> {
               });
             },
             child: Text('Increase Progress'),
+          ),
+          const SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DriverFound()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              minimumSize: const Size(double.infinity, 50),
+            ),
+            child: const Text('Select car'),
           ),
         ],
       ),

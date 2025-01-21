@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:twende/views/home/screen1.dart';
+import 'package:twende/views/home/findPlaceToGo.dart';
 import 'package:twende/views/home/screens/where_going.dart';
 
 List<IconData> selectedicons = [
@@ -170,7 +171,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
                   onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen1(),
+                          builder: (context) => const WhereAreYouGoingScreen(),
                         ),
                       ),
                   child: _optionCard(

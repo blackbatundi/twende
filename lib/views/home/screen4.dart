@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screen5.dart';
+import 'findPlaceToGo.dart';
 
 class Screen4 extends StatelessWidget {
   const Screen4({super.key});

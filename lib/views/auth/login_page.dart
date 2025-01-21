@@ -55,40 +55,40 @@ class _LoginPageState extends State<LoginPage> {
             ),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    const Expanded(child: SizedBox.shrink()),
-                    InkWell(
-                      onTap: () {
-                        // customershowDialog(
-                        //   context,
-                        //   child: const Language(),
-                        // );
-                      },
-                      borderRadius: BorderRadius.circular(15),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 12,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).disabledColor,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(
-                              Icons.translate,
-                              size: 20,
-                            ),
-                            5.widthBox,
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     const Expanded(child: SizedBox.shrink()),
+                //     InkWell(
+                //       onTap: () {
+                //         // customershowDialog(
+                //         //   context,
+                //         //   child: const Language(),
+                //         // );
+                //       },
+                //       borderRadius: BorderRadius.circular(15),
+                //       child: Container(
+                //         padding: const EdgeInsets.symmetric(
+                //           horizontal: 16,
+                //           vertical: 12,
+                //         ),
+                //         decoration: BoxDecoration(
+                //           color: Theme.of(context).disabledColor,
+                //           borderRadius: BorderRadius.circular(15),
+                //         ),
+                //         child: Row(
+                //           mainAxisSize: MainAxisSize.min,
+                //           children: [
+                //             const Icon(
+                //               Icons.translate,
+                //               size: 20,
+                //             ),
+                //             5.widthBox,
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 Expanded(
                   child: SingleChildScrollView(
                     child: BlocListener<AppBloc, AppState>(

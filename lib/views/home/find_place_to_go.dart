@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:twende/views/home/pickedLocalisation.dart';
+import 'package:twende/views/home/picked_localisation.dart';
 
 class FindPlaceToGo extends StatefulWidget {
   const FindPlaceToGo({super.key});

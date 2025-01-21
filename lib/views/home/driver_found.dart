@@ -119,7 +119,7 @@ class _DriverFoundState extends State<DriverFound> {
                       }
                     });
                   },
-                  child: Text('Increase Progress'),
+                  child: const Text('Increase Progress'),
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(

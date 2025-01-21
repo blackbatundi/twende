@@ -21,11 +21,11 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
   void initState() {
     super.initState();
     _polylines.add(
-      Polyline(
+     const Polyline(
         polylineId: const PolylineId('route'),
         color: Colors.red,
         width: 3,
-        points: const [
+        points:  [
           _birereLocation,
           _lechaletLocation,
         ],

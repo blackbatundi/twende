@@ -9,7 +9,6 @@ class DriverFound extends StatefulWidget {
 }
 
 class _DriverFoundState extends State<DriverFound> {
-  double _progressValue = 0.3; // Valeur initiale de progression (30%)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,40 +85,6 @@ class _DriverFoundState extends State<DriverFound> {
                       ),
                     ),
                   ],
-                ),
-                Stack(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 10,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * _progressValue,
-                      height: 10,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Text('${(_progressValue * 100).toInt()}%'),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _progressValue += 0.1;
-                      if (_progressValue > 1) {
-                        _progressValue = 0.0; // Réinitialisation
-                      }
-                    });
-                  },
-                  child: const Text('Increase Progress'),
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(

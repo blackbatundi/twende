@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class ConfirmOrder extends StatefulWidget {
-  const ConfirmOrder({super.key});
+class MyRide extends StatefulWidget {
+  const MyRide({super.key});
 
   @override
-  State<ConfirmOrder> createState() => _ConfirmOrderState();
+  State<MyRide> createState() => _MyRideState();
 }
 
-class _ConfirmOrderState extends State<ConfirmOrder> {
+class _MyRideState extends State<MyRide> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

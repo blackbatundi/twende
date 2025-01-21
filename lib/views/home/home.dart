@@ -101,7 +101,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
                 children: [
                   _homeTab(context),
                   Container(),
-                  Settings(),
+                  const Settings(),
                 ],
               ),
               Align(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/driver_found.dart';
 
 class SearchNearBy extends StatefulWidget {
@@ -78,9 +81,11 @@ class _SearchNearByState extends State<SearchNearBy> {
           ),
           const SizedBox(height: 8),
           Text('${(_progressValue * 100).toInt()}%'),
-          const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () {
+          AppStyle.SPACING_SM.heightBox,
+          CustomButton(
+            backGroundColor: Theme.of(context).disabledColor,
+            title: "Increase Progress",
+            onTap: () {
               setState(() {
                 _progressValue += 0.1;
                 if (_progressValue > 1) {
@@ -88,9 +93,8 @@ class _SearchNearByState extends State<SearchNearBy> {
                 }
               });
             },
-            child:const Text('Increase Progress'),
           ),
-          const SizedBox(height: 10),
+        
           ElevatedButton(
             onPressed: () {
               Navigator.push(

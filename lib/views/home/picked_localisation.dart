@@ -98,24 +98,30 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                 AppStyle.SPACING_SM.heightBox,
                 CustomButton(
                   backGroundColor: Theme.of(context).disabledColor,
-                  title: "Pay with mobile money",
-                  onTap: () {},
-                ),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: () {
+                  title: "Confirm destination",
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const SelectCar()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  child: const Text('Confirm destination'),
                 ),
+                // const SizedBox(height: 16),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) => const SelectCar()),
+                //     );
+                //   },
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.red,
+                //     minimumSize: const Size(double.infinity, 50),
+                //   ),
+                //   child: const Text('Confirm destination'),
+                // ),
               ],
             ),
           ),

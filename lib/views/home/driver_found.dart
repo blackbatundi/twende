@@ -89,22 +89,11 @@ class _DriverFoundState extends State<DriverFound> {
                     ),
                   ],
                 ),
-                 AppStyle.SPACING_SM.heightBox,
-          CustomButton(
-            backGroundColor: Theme.of(context).disabledColor,
-            title: "Select car'",
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchNearBy()),
-              );
-            },
-          ),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text('Cancel trip'),
+                AppStyle.SPACING_SM.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).disabledColor,
+                  title: "Cancel trip",
+                  onTap: () {},
                 ),
               ],
             ),

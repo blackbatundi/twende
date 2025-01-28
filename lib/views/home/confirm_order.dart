@@ -85,7 +85,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           AppStyle.SPACING_SM.heightBox,
           CustomButton(
             backGroundColor: Theme.of(context).disabledColor,
-            title: "Select car'",
+            title: "Select car",
             onTap: () {
               Navigator.push(
                 context,

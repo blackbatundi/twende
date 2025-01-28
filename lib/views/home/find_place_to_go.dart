@@ -82,10 +82,17 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
   }
 
   Widget _buildLocationItem(String title, String subtitle) {
-    return ListTile(
-      leading: const Icon(Icons.location_on_outlined),
-      title: Text(title),
-      subtitle: Text(subtitle),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 17),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(),
+      // leading: const Icon(Icons.location_on_outlined),
+      // title: Text(title),
+      // subtitle: Text(subtitle),
     );
   }
 }

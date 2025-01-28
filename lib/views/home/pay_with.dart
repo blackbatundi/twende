@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/confirm_order.dart';
 
 class PayWith extends StatefulWidget {
@@ -104,6 +107,12 @@ class _PayWithState extends State<PayWith> {
                     ),
                   ),
                   child: const Text('Pay with cash'),
+                ),
+                AppStyle.SPACING_SM.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).disabledColor,
+                  title: "Select car",
+                  onTap: () {},
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(

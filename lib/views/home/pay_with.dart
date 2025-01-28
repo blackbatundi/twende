@@ -89,45 +89,56 @@ class _PayWithState extends State<PayWith> {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                ElevatedButton(
-                  onPressed: () {
+                // ElevatedButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) => const ConfirmOrder()),
+                //     );
+                //   },
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.white,
+                //     foregroundColor: Colors.black,
+                //     minimumSize: const Size(double.infinity, 50),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(8),
+                //       side: const BorderSide(color: Colors.red),
+                //     ),
+                //   ),
+                //   child: const Text('Pay with cash'),
+                // ),
+                CustomButton(
+                  backGroundColor: Theme.of(context).disabledColor,
+                  title: "Pay with cash",
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const ConfirmOrder()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    minimumSize: const Size(double.infinity, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      side: const BorderSide(color: Colors.red),
-                    ),
-                  ),
-                  child: const Text('Pay with cash'),
                 ),
                 AppStyle.SPACING_SM.heightBox,
                 CustomButton(
                   backGroundColor: Theme.of(context).disabledColor,
-                  title: "Select car",
+                  title: "Pay with mobile money",
                   onTap: () {},
                 ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    minimumSize: const Size(double.infinity, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      side: const BorderSide(color: Colors.red),
-                    ),
-                  ),
-                  child: const Text('Pay with mobile money'),
-                ),
+                // const SizedBox(height: 10),
+                // ElevatedButton(
+                //   onPressed: () {},
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.white,
+                //     foregroundColor: Colors.black,
+                //     minimumSize: const Size(double.infinity, 50),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(8),
+                //       side: const BorderSide(color: Colors.red),
+                //     ),
+                //   ),
+                //   child: const Text('Pay with mobile money'),
+                // ),
               ],
             ),
           ),

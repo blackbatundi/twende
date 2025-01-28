@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 
 class DriverFound extends StatefulWidget {
   const DriverFound({super.key});
@@ -86,6 +89,17 @@ class _DriverFoundState extends State<DriverFound> {
                     ),
                   ],
                 ),
+                 AppStyle.SPACING_SM.heightBox,
+          CustomButton(
+            backGroundColor: Theme.of(context).disabledColor,
+            title: "Select car'",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchNearBy()),
+              );
+            },
+          ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {},

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/selected_car.dart';
 
 class LocalisationPicked extends StatefulWidget {
@@ -92,6 +95,12 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                 const SizedBox(height: 16),
                 _buildLocationItem('From Birere', Colors.red),
                 _buildLocationItem('To Lechalet', Colors.green),
+                AppStyle.SPACING_SM.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).disabledColor,
+                  title: "Pay with mobile money",
+                  onTap: () {},
+                ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {

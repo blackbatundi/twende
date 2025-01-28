@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/pay_with.dart';
 
 class SelectCar extends StatefulWidget {
@@ -101,6 +104,17 @@ class _SelectCarState extends State<SelectCar> {
                 ),
                 const SizedBox(height: 10),
                 const Text('Paying with'),
+                 AppStyle.SPACING_SM.heightBox,
+          CustomButton(
+            backGroundColor: Theme.of(context).disabledColor,
+            title: "Select car",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PayWith()),
+              );
+            },
+          ),
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {

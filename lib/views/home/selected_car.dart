@@ -104,30 +104,16 @@ class _SelectCarState extends State<SelectCar> {
                 ),
                 const SizedBox(height: 10),
                 const Text('Paying with'),
-                 AppStyle.SPACING_SM.heightBox,
-          CustomButton(
-            backGroundColor: Theme.of(context).disabledColor,
-            title: "Select car",
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const PayWith()),
-              );
-            },
-          ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
+                AppStyle.SPACING_SM.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).disabledColor,
+                  title: "Select car",
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const PayWith()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  child: const Text('Select car'),
                 ),
               ],
             ),

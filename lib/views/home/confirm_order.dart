@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/search_neary_by.dart';
 
@@ -80,7 +82,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           ),
           const Text("Lechalet"),
           const Text("Comfort FC 45000"),
-          const SizedBox(height: 10),
+          AppStyle.SPACING_SM.heightBox,
           CustomButton(
             backGroundColor: Theme.of(context).disabledColor,
             title: "Select car'",

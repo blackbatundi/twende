@@ -80,6 +80,13 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           const Text("Lechalet"),
           const Text("Comfort FC 45000"),
           const SizedBox(height: 10),
+        CustomButton(
+                        backGroundColor: Theme.of(context).disabledColor,
+                        title: AppLocalizations.of(context)!.noWord,
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      ),
           ElevatedButton(
             onPressed: () {
               Navigator.push(

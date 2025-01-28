@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/search_neary_by.dart';
 
 class ConfirmOrder extends StatefulWidget {
@@ -80,25 +81,15 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           const Text("Lechalet"),
           const Text("Comfort FC 45000"),
           const SizedBox(height: 10),
-        CustomButton(
-                        backGroundColor: Theme.of(context).disabledColor,
-                        title: AppLocalizations.of(context)!.noWord,
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-          ElevatedButton(
-            onPressed: () {
+          CustomButton(
+            backGroundColor: Theme.of(context).disabledColor,
+            title: "Select car'",
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const SearchNearBy()),
               );
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              minimumSize: const Size(double.infinity, 50),
-            ),
-            child: const Text('Select car'),
           ),
         ],
       ),

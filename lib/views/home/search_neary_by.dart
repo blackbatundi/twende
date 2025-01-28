@@ -94,19 +94,16 @@ class _SearchNearByState extends State<SearchNearBy> {
               });
             },
           ),
-        
-          ElevatedButton(
-            onPressed: () {
+          AppStyle.SPACING_SM.heightBox,
+          CustomButton(
+            backGroundColor: Theme.of(context).disabledColor,
+            title: "Select car",
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const DriverFound()),
               );
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              minimumSize: const Size(double.infinity, 50),
-            ),
-            child: const Text('Select car'),
           ),
         ],
       ),

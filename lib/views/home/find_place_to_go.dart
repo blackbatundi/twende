@@ -89,10 +89,17 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(15),
       ),
-      child: Row(),
-      // leading: const Icon(Icons.location_on_outlined),
-      // title: Text(title),
-      // subtitle: Text(subtitle),
+      child: Row(
+        children: [
+          const Icon(Icons.location_on_outlined),
+          Column(
+            children: [
+              Text(title),
+              Text(subtitle),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

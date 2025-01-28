@@ -82,7 +82,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
           ),
           const Text("Lechalet"),
           const Text("Comfort FC 45000"),
-          AppStyle.SPACING_SM.heightBox,
+          // AppStyle.SPACING_SM.heightBox,
           CustomButton(
             backGroundColor: Theme.of(context).disabledColor,
             title: "Select car'",

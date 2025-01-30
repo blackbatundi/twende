@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
 import 'package:twende/services/style.dart';
 import 'package:twende/views/home/picked_localisation.dart';
 
@@ -33,22 +34,27 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
                 Positioned(
                   top: 40,
                   left: 16,
-                  child: InkWell(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 12,
+                  child: Column(
+                    children: [
+                      AppStyle.SPACING_SM.heightBox,
+                      InkWell(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 12,
+                          ),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Theme.of(context).cardColor,
+                          ),
+                          child: Icon(
+                            Icons.close,
+                            size: AppStyle.ICON_NX,
+                          ),
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Theme.of(context).cardColor,
-                      ),
-                      child: Icon(
-                        Icons.close,
-                        size: AppStyle.ICON_NX,
-                      ),
-                    ),
+                    ],
                   ),
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/style.dart';
 import 'package:twende/views/home/picked_localisation.dart';
 
 class FindPlaceToGo extends StatefulWidget {
@@ -32,10 +33,25 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
                 Positioned(
                   top: 40,
                   left: 16,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).cardColor,
+                    ),
+                    child: Icon(
+                      Icons.close,
+                      size: AppStyle.ICON_NX,
+                    ),
                   ),
+
+                  //   IconButton(
+                  //     icon: const Icon(Icons.arrow_back),
+                  //     onPressed: () => Navigator.pop(context),
+                  //   ),
                 ),
               ],
             ),

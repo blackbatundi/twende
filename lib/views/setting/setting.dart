@@ -24,10 +24,20 @@ class _SettingsState extends State<Settings>
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              AppStyle.SPACING_XL.heightBox,
-              appBar(
-                title: "Paramettre",
-                context: context,
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox.shrink(),
+                  Expanded(
+                    child: Text(
+                      "Paramettre",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               AppStyle.SPACING_XL.heightBox,
               Expanded(

@@ -48,7 +48,6 @@ class _SettingsState extends State<Settings>
                       ),
                       AppStyle.SPACING_XL.heightBox,
                       Container(
-                        width: MediaQuery.of(context).size.width / 2,
                         padding: const EdgeInsets.symmetric(
                           vertical: 29,
                           horizontal: 29,
@@ -138,7 +137,6 @@ class _SettingsState extends State<Settings>
                           );
                         },
                         child: Container(
-                          width: MediaQuery.of(context).size.width / 2,
                           padding: const EdgeInsets.symmetric(
                             vertical: 29,
                             horizontal: 29,

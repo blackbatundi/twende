@@ -121,6 +121,25 @@ class _SettingsState extends State<Settings>
                                 ),
                               ],
                             ),
+                            AppStyle.SPACING_XL.heightBox,
+                            Row(
+                              children: [
+                                const Expanded(
+                                  child: Text(
+                                    overflow: TextOverflow.ellipsis,
+                                    "Editer les information",
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Icon(
+                                  Iconsax.edit,
+                                  size: AppStyle.ICON_NX,
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ),

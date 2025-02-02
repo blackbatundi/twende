@@ -276,7 +276,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       padding: const EdgeInsets.only(bottom: 10),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withOpacity(.2),
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(20),
         border: Border(top: BorderSide(color: Theme.of(context).disabledColor)),
       ),
@@ -315,7 +315,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Icon(
               selectedIndex == index ? selectedicon : unselectedicon,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).cardColor,
             ),
           ),
         ],

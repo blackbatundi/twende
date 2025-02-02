@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/search_neary_by.dart';
 
 class ConfirmOrder extends StatefulWidget {
@@ -67,31 +70,53 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                   },
                 ),
                 Positioned(
-                  top: 40,
+                  top: 50,
                   left: 16,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          const Text("Lechalet"),
-          const Text("Comfort FC 45000"),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchNearBy()),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              minimumSize: const Size(double.infinity, 50),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "Lechalet",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                AppStyle.SPACING_SM.heightBox,
+                const Text("Comfort FC 45000"),
+                AppStyle.SPACING_XL.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).primaryColor,
+                  titleColor: Colors.white,
+                  title: "Select car",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SearchNearBy()),
+                    );
+                  },
+                ),
+              ],
             ),
-            child: const Text('Select car'),
           ),
         ],
       ),

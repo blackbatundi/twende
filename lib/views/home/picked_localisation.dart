@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
+import 'package:twende/utils/button.dart';
 import 'package:twende/views/home/selected_car.dart';
 
 class LocalisationPicked extends StatefulWidget {
@@ -67,11 +70,20 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                   },
                 ),
                 Positioned(
-                  top: 40,
+                  top: 50,
                   left: 16,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
+                    ),
                   ),
                 ),
               ],
@@ -90,22 +102,29 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                _buildLocationItem('From Birere', Colors.red),
-                _buildLocationItem('To Lechalet', Colors.green),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: () {
+                modelActuel(
+                  context,
+                  icon: Icons.location_on,
+                  title: "From Birere",
+                ),
+                10.heightBox,
+                modelPasVisiteur(
+                  context,
+                  icon: Icons.location_on,
+                  title: "To Lechalet",
+                ),
+                AppStyle.SPACING_XL.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).primaryColor,
+                  titleColor: Colors.white,
+                  title: "Confirm destination",
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const SelectCar()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  child: const Text('Confirm destination'),
                 ),
               ],
             ),
@@ -115,12 +134,114 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
     );
   }
 
-  Widget _buildLocationItem(String text, Color color) {
-    return Row(
+  Widget modelActuel(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+  }) {
+    return Stack(
+      clipBehavior: Clip.none,
       children: [
-        Icon(Icons.location_on, color: color),
-        const SizedBox(width: 8),
-        Text(text),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(.16),
+                offset: const Offset(0, 3),
+                blurRadius: 5,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                AppStyle.SPACING_SM.widthBox,
+                Text(
+                  "$title ",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget modelPasVisiteur(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+  }) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Positioned(
+          left: 35,
+          top: -10,
+          bottom: 10,
+          child: Container(
+            width: 3,
+            color: Theme.of(context).primaryColor.withOpacity(0.3),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(
+            top: 30,
+          ),
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(.16),
+                offset: const Offset(0, 3),
+                blurRadius: 5,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF7DB8A9),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                AppStyle.SPACING_SM.widthBox,
+                Text(
+                  "$title ",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }

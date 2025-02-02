@@ -24,10 +24,20 @@ class _SettingsState extends State<Settings>
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              AppStyle.SPACING_XL.heightBox,
-              appBar(
-                title: "Paramettre",
-                context: context,
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox.shrink(),
+                  Expanded(
+                    child: Text(
+                      "Paramettre",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               AppStyle.SPACING_XL.heightBox,
               Expanded(
@@ -48,7 +58,6 @@ class _SettingsState extends State<Settings>
                       ),
                       AppStyle.SPACING_XL.heightBox,
                       Container(
-                        width: MediaQuery.of(context).size.width / 2,
                         padding: const EdgeInsets.symmetric(
                           vertical: 29,
                           horizontal: 29,
@@ -122,6 +131,25 @@ class _SettingsState extends State<Settings>
                                 ),
                               ],
                             ),
+                            AppStyle.SPACING_XL.heightBox,
+                            Row(
+                              children: [
+                                const Expanded(
+                                  child: Text(
+                                    overflow: TextOverflow.ellipsis,
+                                    "Editer les information",
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Icon(
+                                  Iconsax.edit,
+                                  size: AppStyle.ICON_NX,
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ),
@@ -138,7 +166,6 @@ class _SettingsState extends State<Settings>
                           );
                         },
                         child: Container(
-                          width: MediaQuery.of(context).size.width / 2,
                           padding: const EdgeInsets.symmetric(
                             vertical: 29,
                             horizontal: 29,
@@ -153,6 +180,47 @@ class _SettingsState extends State<Settings>
                                 child: Text(
                                   overflow: TextOverflow.ellipsis,
                                   "Deconnexion",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Icon(
+                                Icons.logout,
+                                size: AppStyle.ICON_NX,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      AppStyle.SPACING_LG.heightBox,
+                      InkWell(
+                        onTap: () {
+                          showTopSlideDialog(
+                            context,
+                            LogOut(
+                              message:
+                                  AppLocalizations.of(context)!.logoutQuestion,
+                              title: AppLocalizations.of(context)!.logoutWord,
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 29,
+                            horizontal: 29,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              const Expanded(
+                                child: Text(
+                                  overflow: TextOverflow.ellipsis,
+                                  "Delete account ",
                                   style: TextStyle(
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,

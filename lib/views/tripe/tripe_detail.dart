@@ -12,50 +12,115 @@ class _TripeDetailState extends State<TripeDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
-        title: const Text('Trip details'),
-      ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 200,
-            child: GoogleMap(
-              initialCameraPosition: const CameraPosition(
-                target: LatLng(-1.6859, 29.2218),
-                zoom: 14,
-              ),
-              markers: {
-                const Marker(
-                  markerId: MarkerId('from'),
-                  position: LatLng(-1.6859, 29.2218),
-                  infoWindow: InfoWindow(title: 'From Birere'),
+          const SizedBox(height: 16),
+          Expanded(
+            child: Stack(
+              children: [
+                GoogleMap(
+                  initialCameraPosition: const CameraPosition(
+                    target: LatLng(-1.6859, 29.2218),
+                    zoom: 14,
+                  ),
+                  markers: {
+                    const Marker(
+                      markerId: MarkerId('from'),
+                      position: LatLng(-1.6859, 29.2218),
+                      infoWindow: InfoWindow(title: 'From Birere'),
+                    ),
+                    const Marker(
+                      markerId: MarkerId('to'),
+                      position: LatLng(-1.6500, 29.3000),
+                      infoWindow: InfoWindow(title: 'To Lechalet'),
+                    ),
+                  },
+                  polylines: {
+                    const Polyline(
+                      polylineId: PolylineId('route'),
+                      points: [
+                        LatLng(-1.6859, 29.2218),
+                        LatLng(-1.6500, 29.3000),
+                      ],
+                      color: Colors.red,
+                      width: 4,
+                    ),
+                  },
                 ),
-                const Marker(
-                  markerId: MarkerId('to'),
-                  position: LatLng(-1.6500, 29.3000),
-                  infoWindow: InfoWindow(title: 'To Lechalet'),
+                Positioned(
+                  top: 40,
+                  left: 16,
+                  child: Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(Icons.arrow_back),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        'Trip details',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
-              },
-              polylines: {
-                const Polyline(
-                  polylineId: PolylineId('route'),
-                  points: [
-                    LatLng(-1.6859, 29.2218),
-                    LatLng(-1.6500, 29.3000),
-                  ],
-                  color: Colors.red,
-                  width: 4,
-                ),
-              },
+              ],
             ),
           ),
-          const ListTile(
-            title: Text('Ride with Muhindo Masu'),
+          const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Container(
+              margin: const EdgeInsets.only(
+                top: 8,
+              ),
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.only(top: 10),
+              decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.16),
+                    offset: const Offset(0, 3),
+                    blurRadius: 5,
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Ride with Muhindo Masu',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'UBM102M Toyota Sienta Grey',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor.withOpacity(.7),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
+          const SizedBox(height: 16),
         ],
       ),
     );

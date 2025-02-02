@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:twende/views/home/find_place_to_go.dart';
 import 'package:twende/views/setting/setting.dart';
+import 'package:twende/views/tripe/my_ride.dart';
 
 List<IconData> selectedicons = [
   Iconsax.home_15,
@@ -100,7 +101,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   _homeTab(context),
-                  Container(),
+                  const MyRide(),
                   const Settings(),
                 ],
               ),
@@ -162,17 +163,29 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                  onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const FindPlaceToGo(),
-                        ),
-                      ),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FindPlaceToGo(),
+                  ),
+                ),
+                child: Expanded(
                   child: _optionCard(
                     Icons.directions_car,
                     "Order Car",
-                  )),
-              _optionCard(Icons.two_wheeler, "Order Boda"),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FindPlaceToGo(),
+                          ),
+                        ),
+                    child: _optionCard(Icons.two_wheeler, "Order Boda")),
+              ),
             ],
           ),
           const SizedBox(height: 24),
@@ -183,22 +196,20 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
   }
 
   Widget _optionCard(IconData icon, String label) {
-    return Expanded(
-      child: Container(
-        height: 100,
-        margin: const EdgeInsets.symmetric(horizontal: 4),
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40),
-            const SizedBox(height: 8),
-            Text(label),
-          ],
-        ),
+    return Container(
+      height: 100,
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 40),
+          const SizedBox(height: 8),
+          Text(label),
+        ],
       ),
     );
   }
@@ -275,7 +286,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       padding: const EdgeInsets.only(bottom: 10),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withOpacity(.2),
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(20),
         border: Border(top: BorderSide(color: Theme.of(context).disabledColor)),
       ),
@@ -314,7 +325,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Icon(
               selectedIndex == index ? selectedicon : unselectedicon,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).cardColor,
             ),
           ),
         ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 import 'package:twende/views/home/picked_localisation.dart';
 
 class FindPlaceToGo extends StatefulWidget {
@@ -32,9 +34,26 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
                 Positioned(
                   top: 40,
                   left: 16,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
+                  child: Column(
+                    children: [
+                      AppStyle.SPACING_SM.heightBox,
+                      InkWell(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 12,
+                          ),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Theme.of(context).cardColor,
+                          ),
+                          child: const Icon(
+                            Icons.arrow_back,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -82,10 +101,24 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
   }
 
   Widget _buildLocationItem(String title, String subtitle) {
-    return ListTile(
-      leading: const Icon(Icons.location_on_outlined),
-      title: Text(title),
-      subtitle: Text(subtitle),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 17),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.location_on_outlined),
+          Column(
+            children: [
+              Text(title),
+              Text(subtitle),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

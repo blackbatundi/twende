@@ -102,14 +102,7 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                 modelPasVisiteur(
                   context,
                   icon: Icons.location_on,
-                  title: "Kyeshero, Goma",
-                  subtitle: "Pas visiteur",
-                  description:
-                      "Je me rends à [lieu] le [date]Je me rends à [lieu] le [date]Je me rends à [lieu] le [date] pour [motif de la visite], afin de",
-                  duration: "17 jours",
-                  additionalText: "Katoyi - Goma",
-                  date: "Mardi le 11 Juin 2010",
-                  adress: "13, Av la corniche, Goma",
+                  title: "To Lechalet",
                 ),
                 _buildLocationItem('From Birere', Colors.red),
                 _buildLocationItem('To Lechalet', Colors.green),
@@ -215,12 +208,6 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
     BuildContext context, {
     required IconData icon,
     required String title,
-    required String subtitle,
-    required String description,
-    required String duration,
-    String? additionalText,
-    String? date,
-    String? adress,
   }) {
     return Stack(
       clipBehavior: Clip.none,
@@ -238,6 +225,7 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
           margin: const EdgeInsets.only(
             top: 30,
           ),
+          width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
@@ -250,174 +238,20 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
               ),
             ],
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            description,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color:
-                                  Theme.of(context).textTheme.bodySmall?.color,
-                            ),
-                          ),
-                        ),
-                        const Icon(
-                          Icons.more_vert,
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
-                    Row(
-                      children: [
-                        Text(
-                          "$title ",
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "- $subtitle",
-                          style: TextStyle(
-                            color: Theme.of(context).textTheme.bodySmall?.color,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
-                    if (date != null)
-                      Text(
-                        "$date - $duration",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Theme.of(context).textTheme.bodySmall?.color,
-                        ),
-                      ),
-                    AppStyle.SPACING_LG.heightBox,
-                    Container(
-                      height: 1.5,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).disabledColor.withOpacity(.5),
-                      ),
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              additionalText!,
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.color,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                            ),
-                            AppStyle.SPACING_XS.heightBox,
-                            Text(
-                              adress!,
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.color,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              date!,
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.color,
-                                fontSize: 12,
-                              ),
-                            ),
-                            AppStyle.SPACING_XS.heightBox,
-                            Text(
-                              "Location",
-                              style: TextStyle(
-                                color: Colors.red.withOpacity(0.5),
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Responsable",
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.color,
-                                fontSize: 12,
-                              ),
-                            ),
-                            AppStyle.SPACING_XS.heightBox,
-                            const Text(
-                              "Johnathan Louis",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "situationWord",
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.color,
-                                fontSize: 12,
-                              ),
-                            ),
-                            AppStyle.SPACING_XS.heightBox,
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Titre et sous-titre
+                Text(
+                  "$title ",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Positioned(

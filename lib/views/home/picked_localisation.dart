@@ -104,8 +104,7 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                   icon: Icons.location_on,
                   title: "To Lechalet",
                 ),
-                _buildLocationItem('From Birere', Colors.red),
-                _buildLocationItem('To Lechalet', Colors.green),
+
                 AppStyle.SPACING_SM.heightBox,
                 CustomButton(
                   backGroundColor: Theme.of(context).disabledColor,
@@ -270,16 +269,6 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
             ),
           ),
         ),
-      ],
-    );
-  }
-
-  Widget _buildLocationItem(String text, Color color) {
-    return Row(
-      children: [
-        Icon(Icons.location_on, color: color),
-        const SizedBox(width: 8),
-        Text(text),
       ],
     );
   }

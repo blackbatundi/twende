@@ -163,17 +163,29 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                  onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const FindPlaceToGo(),
-                        ),
-                      ),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FindPlaceToGo(),
+                  ),
+                ),
+                child: Expanded(
                   child: _optionCard(
                     Icons.directions_car,
                     "Order Car",
-                  )),
-              _optionCard(Icons.two_wheeler, "Order Boda"),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FindPlaceToGo(),
+                          ),
+                        ),
+                    child: _optionCard(Icons.two_wheeler, "Order Boda")),
+              ),
             ],
           ),
           const SizedBox(height: 24),
@@ -184,22 +196,20 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
   }
 
   Widget _optionCard(IconData icon, String label) {
-    return Expanded(
-      child: Container(
-        height: 100,
-        margin: const EdgeInsets.symmetric(horizontal: 4),
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40),
-            const SizedBox(height: 8),
-            Text(label),
-          ],
-        ),
+    return Container(
+      height: 100,
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 40),
+          const SizedBox(height: 8),
+          Text(label),
+        ],
       ),
     );
   }

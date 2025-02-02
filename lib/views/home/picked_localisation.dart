@@ -96,19 +96,12 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                 modelActuel(
                   context,
                   icon: Icons.location_on,
-                  title: "Kyeshero, Goma",
-                  subtitle: "Visiteur",
-                  description:
-                      "Je me rends à [lieu] le [date] pour [motif de la visite], afin de [objectif spécifique de la visite]",
-                  duration: "17 jours",
-                  additionalText: "Localisation actuelle",
-                  personName: "Johnathan Louis",
-                  personRole: "Responsable",
+                  title: "From Birere",
                 ),
                 10.heightBox,
                 modelPasVisiteur(
                   context,
-                  icon: Icons.home,
+                  icon: Icons.location_on,
                   title: "Kyeshero, Goma",
                   subtitle: "Pas visiteur",
                   description:
@@ -159,17 +152,12 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
     BuildContext context, {
     required IconData icon,
     required String title,
-    required String subtitle,
-    required String description,
-    required String duration,
-    String? additionalText,
-    String? personName,
-    String? personRole,
   }) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
         Container(
+          width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
@@ -191,124 +179,11 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Titre et sous-titre
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Text(
-                                "$title ",
-                                style: TextStyle(
-                                  color: Theme.of(context).primaryColor,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "- $subtitle",
-                                style: TextStyle(
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.color,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Icon(
-                          Icons.more_vert,
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
                     Text(
-                      description,
-                      style: TextStyle(
-                        color: Theme.of(context).textTheme.bodySmall?.color,
-                        fontSize: 12,
+                      "$title ",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
                       ),
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
-                    Row(
-                      children: [
-                        Text(
-                          duration,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        if (additionalText != null)
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(3),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Theme.of(context).disabledColor,
-                                ),
-                              ),
-                              const SizedBox(width: 5),
-                              Text(
-                                additionalText,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.red.withOpacity(0.5),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                      ],
-                    ),
-                    AppStyle.SPACING_SM.heightBox,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 20,
-                          width: 20,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            image: const DecorationImage(
-                              image: AssetImage(
-                                "assets/icons/pic.jpg",
-                              ),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        AppStyle.SPACING_SM.widthBox,
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Text(
-                                personName!,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              AppStyle.SPACING_SM.widthBox,
-                              Text(
-                                " - $personRole",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.color,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),

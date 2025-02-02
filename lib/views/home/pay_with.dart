@@ -71,14 +71,20 @@ class _PayWithState extends State<PayWith> {
                     mapController = controller;
                   },
                 ),
-                const Positioned(
-                  top: 40,
+                Positioned(
+                  top: 50,
                   left: 16,
-                  child: Text(
-                    'Home',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
                     ),
                   ),
                 ),
@@ -89,25 +95,6 @@ class _PayWithState extends State<PayWith> {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                // ElevatedButton(
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => const ConfirmOrder()),
-                //     );
-                //   },
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Colors.white,
-                //     foregroundColor: Colors.black,
-                //     minimumSize: const Size(double.infinity, 50),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(8),
-                //       side: const BorderSide(color: Colors.red),
-                //     ),
-                //   ),
-                //   child: const Text('Pay with cash'),
-                // ),
                 CustomButton(
                   backGroundColor: Theme.of(context).disabledColor,
                   title: "Pay with cash",
@@ -125,20 +112,6 @@ class _PayWithState extends State<PayWith> {
                   title: "Pay with mobile money",
                   onTap: () {},
                 ),
-                // const SizedBox(height: 10),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Colors.white,
-                //     foregroundColor: Colors.black,
-                //     minimumSize: const Size(double.infinity, 50),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(8),
-                //       side: const BorderSide(color: Colors.red),
-                //     ),
-                //   ),
-                //   child: const Text('Pay with mobile money'),
-                // ),
               ],
             ),
           ),

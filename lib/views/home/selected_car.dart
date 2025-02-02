@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:twende/services/extentions.dart';
 import 'package:twende/services/style.dart';
 import 'package:twende/utils/button.dart';
@@ -112,7 +111,7 @@ class _SelectCarState extends State<SelectCar> {
                   'FC 5000',
                   Icons.motorcycle,
                 ),
-                const SizedBox(height: 10),
+                AppStyle.SPACING_XL.heightBox,
                 Row(
                   children: [
                     const SizedBox(width: 16),

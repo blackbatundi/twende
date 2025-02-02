@@ -107,7 +107,8 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
 
                 AppStyle.SPACING_SM.heightBox,
                 CustomButton(
-                  backGroundColor: Theme.of(context).disabledColor,
+                  backGroundColor: Theme.of(context).primaryColor,
+                  titleColor: Colors.white,
                   title: "Confirm destination",
                   onTap: () {
                     Navigator.push(
@@ -162,40 +163,27 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
               ),
             ],
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Titre et sous-titre
-                    Text(
-                      "$title ",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    shape: BoxShape.circle,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          top: -20,
-          left: 15,
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Theme.of(context).primaryColor,
-            ),
-            child: const Icon(
-              Icons.location_on,
-              color: Colors.white,
-              size: 16,
+                AppStyle.SPACING_SM.widthBox,
+                Text(
+                  "$title ",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -217,7 +205,7 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
           bottom: 10,
           child: Container(
             width: 3,
-            color: const Color(0xFF7DB8A9).withOpacity(0.3),
+            color: Theme.of(context).primaryColor.withOpacity(0.3),
           ),
         ),
         Container(
@@ -261,22 +249,6 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
             ),
           ),
         ),
-        // Positioned(
-        //   top: 10, // Décalage vers le haut
-        //   left: 15,
-        //   child: Container(
-        //     padding: const EdgeInsets.all(10),
-        //     decoration: const BoxDecoration(
-        //       color: Color(0xFF7DB8A9),
-        //       shape: BoxShape.circle,
-        //     ),
-        //     child: Icon(
-        //       icon,
-        //       color: Colors.white,
-        //       size: 16,
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }

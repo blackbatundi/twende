@@ -48,9 +48,8 @@ class _FindPlaceToGoState extends State<FindPlaceToGo> {
                             shape: BoxShape.circle,
                             color: Theme.of(context).cardColor,
                           ),
-                          child: Icon(
-                            Icons.close,
-                            size: AppStyle.ICON_NX,
+                          child: const Icon(
+                            Icons.arrow_back,
                           ),
                         ),
                       ),

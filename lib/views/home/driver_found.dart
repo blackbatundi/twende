@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:twende/services/extentions.dart';
@@ -76,34 +77,62 @@ class _DriverFoundState extends State<DriverFound> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Driver found',
-                    style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 8),
-                const Text('Muhindo Masu'),
-                const Text('UBM102M Toyota Sienta Grey'),
-                const SizedBox(height: 16),
+                const Text(
+                  'Driver found',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                AppStyle.SPACING_SM.heightBox,
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.phone),
-                      label: const Text('Call'),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Muhindo Masu',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color:
+                                  Theme.of(context).textTheme.bodySmall?.color,
+                            ),
+                          ),
+                          Text(
+                            'UBM102M Toyota Sienta Grey',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context)
+                                  .primaryColor
+                                  .withOpacity(.7),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    const SizedBox(width: 16),
-                    const Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Chat',
-                          suffixIcon: Icon(Icons.send),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: const Icon(
+                          Icons.phone,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                   ],
                 ),
-                AppStyle.SPACING_SM.heightBox,
+                const SizedBox(height: 16),
+                AppStyle.SPACING_XL.heightBox,
                 CustomButton(
-                  backGroundColor: Theme.of(context).disabledColor,
+                  backGroundColor: Theme.of(context).primaryColor,
+                  titleColor: Colors.white,
                   title: "Cancel trip",
                   onTap: () {},
                 ),

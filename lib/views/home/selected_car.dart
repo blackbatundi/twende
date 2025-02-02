@@ -113,9 +113,10 @@ class _SelectCarState extends State<SelectCar> {
                 ),
                 const SizedBox(height: 10),
                 const Text('Paying with'),
-                AppStyle.SPACING_SM.heightBox,
+                AppStyle.SPACING_XL.heightBox,
                 CustomButton(
-                  backGroundColor: Theme.of(context).disabledColor,
+                  backGroundColor: Theme.of(context).primaryColor,
+                  titleColor: Colors.white,
                   title: "Select car",
                   onTap: () {
                     Navigator.push(

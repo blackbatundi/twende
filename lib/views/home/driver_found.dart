@@ -67,40 +67,6 @@ class _DriverFoundState extends State<DriverFound> {
               ),
             ]),
           ),
-          //  Expanded(
-          //   child: Stack(
-          //     children: [
-          //       GoogleMap(
-          //         initialCameraPosition: const CameraPosition(
-          //           target: LatLng(-1.6721, 29.2285),
-          //           zoom: 14,
-          //         ),
-          //         polylines: _polylines,
-          //         markers: _markers,
-          //         onMapCreated: (GoogleMapController controller) {
-          //           mapController = controller;
-          //         },
-          //       ),
-          // Positioned(
-          //   top: 50,
-          //   left: 16,
-          //   child: InkWell(
-          //     onTap: () {
-          //       Navigator.pop(context);
-          //     },
-          //     child: Container(
-          //       padding: const EdgeInsets.all(10),
-          //       decoration: BoxDecoration(
-          //         color: Theme.of(context).cardColor,
-          //         shape: BoxShape.circle,
-          //       ),
-          //       child: const Icon(Icons.arrow_back),
-          //     ),
-          //   ),
-          // ),
-          //     ],
-          //   ),
-          //  ),
           Container(
             padding: const EdgeInsets.all(16),
             decoration: const BoxDecoration(

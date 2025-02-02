@@ -104,8 +104,7 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                   icon: Icons.location_on,
                   title: "To Lechalet",
                 ),
-
-                AppStyle.SPACING_SM.heightBox,
+                AppStyle.SPACING_XL.heightBox,
                 CustomButton(
                   backGroundColor: Theme.of(context).primaryColor,
                   titleColor: Colors.white,
@@ -118,21 +117,6 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
                     );
                   },
                 ),
-                // const SizedBox(height: 16),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => const SelectCar()),
-                //     );
-                //   },
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Colors.red,
-                //     minimumSize: const Size(double.infinity, 50),
-                //   ),
-                //   child: const Text('Confirm destination'),
-                // ),
               ],
             ),
           ),

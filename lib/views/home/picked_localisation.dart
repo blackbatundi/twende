@@ -239,10 +239,18 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
           ),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Titre et sous-titre
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF7DB8A9),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                AppStyle.SPACING_SM.widthBox,
                 Text(
                   "$title ",
                   style: const TextStyle(
@@ -253,22 +261,22 @@ class _LocalisationPickedState extends State<LocalisationPicked> {
             ),
           ),
         ),
-        Positioned(
-          top: 10, // Décalage vers le haut
-          left: 15,
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-              color: Color(0xFF7DB8A9),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: 16,
-            ),
-          ),
-        ),
+        // Positioned(
+        //   top: 10, // Décalage vers le haut
+        //   left: 15,
+        //   child: Container(
+        //     padding: const EdgeInsets.all(10),
+        //     decoration: const BoxDecoration(
+        //       color: Color(0xFF7DB8A9),
+        //       shape: BoxShape.circle,
+        //     ),
+        //     child: Icon(
+        //       icon,
+        //       color: Colors.white,
+        //       size: 16,
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

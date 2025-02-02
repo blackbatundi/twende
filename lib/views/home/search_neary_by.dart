@@ -69,53 +69,58 @@ class _SearchNearByState extends State<SearchNearBy> {
               ),
             ]),
           ),
-          const Text('Searching nearby drivers'),
-          const Text('Ride requested '),
-          Stack(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(10),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Searching nearby drivers',
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * _progressValue,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(10),
+                AppStyle.SPACING_SM.heightBox,
+                Text(
+                  'Ride requested ',
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.bodySmall?.color,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text('${(_progressValue * 100).toInt()}%'),
-          AppStyle.SPACING_SM.heightBox,
-          CustomButton(
-            backGroundColor: Theme.of(context).disabledColor,
-            title: "Increase Progress",
-            onTap: () {
-              setState(() {
-                _progressValue += 0.1;
-                if (_progressValue > 1) {
-                  _progressValue = 0.0; // Réinitialisation
-                }
-              });
-            },
-          ),
-          AppStyle.SPACING_SM.heightBox,
-          CustomButton(
-            backGroundColor: Theme.of(context).disabledColor,
-            title: "Driver",
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const DriverFound()),
-              );
-            },
+                AppStyle.SPACING_SM.heightBox,
+                Stack(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 10,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * _progressValue,
+                      height: 10,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ],
+                ),
+                AppStyle.SPACING_XL.heightBox,
+                CustomButton(
+                  backGroundColor: Theme.of(context).primaryColor,
+                  titleColor: Colors.white,
+                  title: "Driver",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DriverFound()),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),

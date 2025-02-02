@@ -110,7 +110,7 @@ class _SearchNearByState extends State<SearchNearBy> {
                 CustomButton(
                   backGroundColor: Theme.of(context).primaryColor,
                   titleColor: Colors.white,
-                  title: "Driver",
+                  title: "View the driver",
                   onTap: () {
                     Navigator.push(
                       context,

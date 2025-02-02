@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:twende/views/home/find_place_to_go.dart';
 import 'package:twende/views/setting/setting.dart';
+import 'package:twende/views/tripe/my_ride.dart';
 
 List<IconData> selectedicons = [
   Iconsax.home_15,
@@ -100,7 +101,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   _homeTab(context),
-                  Container(),
+                  const MyRide(),
                   const Settings(),
                 ],
               ),

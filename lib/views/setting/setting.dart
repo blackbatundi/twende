@@ -194,6 +194,47 @@ class _SettingsState extends State<Settings>
                           ),
                         ),
                       ),
+                      AppStyle.SPACING_LG.heightBox,
+                      InkWell(
+                        onTap: () {
+                          showTopSlideDialog(
+                            context,
+                            LogOut(
+                              message:
+                                  AppLocalizations.of(context)!.logoutQuestion,
+                              title: AppLocalizations.of(context)!.logoutWord,
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 29,
+                            horizontal: 29,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              const Expanded(
+                                child: Text(
+                                  overflow: TextOverflow.ellipsis,
+                                  "Delete account ",
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Icon(
+                                Icons.logout,
+                                size: AppStyle.ICON_NX,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

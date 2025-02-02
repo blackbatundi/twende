@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twende/views/tripe/tripe_detail.dart';
 
 class MyRide extends StatefulWidget {
   const MyRide({super.key});
@@ -34,7 +35,7 @@ class _MyRideState extends State<MyRide> {
                     children: [
                       ...List.generate(
                         15,
-                        (index) => rides(),
+                        (index) => tripe(),
                       )
                     ],
                   ),
@@ -47,33 +48,41 @@ class _MyRideState extends State<MyRide> {
     );
   }
 
-  Widget rides() {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 8,
+  Widget tripe() {
+    return InkWell(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const TripeDetail(),
+        ),
       ),
-      width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.only(top: 10),
-      decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.16),
-            offset: const Offset(0, 3),
-            blurRadius: 5,
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Lechalet', style: TextStyle(fontWeight: FontWeight.bold)),
-            Text('Jan 20, 1:40 PM'),
-            Text('FC 4,5000'),
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 8,
+        ),
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.only(top: 10),
+        decoration: BoxDecoration(
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(.16),
+              offset: const Offset(0, 3),
+              blurRadius: 5,
+            ),
           ],
+        ),
+        child: const Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Lechalet', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('Jan 20, 1:40 PM'),
+              Text('FC 4,5000'),
+            ],
+          ),
         ),
       ),
     );

@@ -70,11 +70,20 @@ class _SelectCarState extends State<SelectCar> {
                   },
                 ),
                 Positioned(
-                  top: 40,
+                  top: 50,
                   left: 16,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
+                    ),
                   ),
                 ),
               ],

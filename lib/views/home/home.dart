@@ -287,7 +287,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.circular(20),
+        // borderRadius: BorderRadius.circular(8),
         border: Border(top: BorderSide(color: Theme.of(context).disabledColor)),
       ),
       child: Wrap(

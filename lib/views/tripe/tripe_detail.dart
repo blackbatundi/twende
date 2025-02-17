@@ -17,7 +17,7 @@ class _TripeDetailState extends State<TripeDetail> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 16),
+          AppStyle.SPACING_LG.heightBox,
           Expanded(
             child: Stack(
               children: [

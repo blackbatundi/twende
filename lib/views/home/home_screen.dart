@@ -3,18 +3,19 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:twende/views/home/find_place_to_go.dart';
 
-class MyRide extends StatefulWidget {
-  const MyRide({super.key});
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<MyRide> createState() => _MyRideState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyRideState extends State<MyRide> {
-
-    String _salutation = '';
+class _HomeScreenState extends State<HomeScreen> {
+  String _salutation = '';
   Timer? _timer;
-    @override
+  @override
   void didChangeDependencies() {
     if (mounted) {
       _updateSalutation();
@@ -57,81 +58,81 @@ class _MyRideState extends State<MyRide> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Twende",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
-          const SizedBox(height: 16),
-          TextField(
-            decoration: InputDecoration(
-              hintText: "Where to?",
-              prefixIcon: const Icon(Icons.search),
-              filled: true,
-              fillColor: Colors.grey[200],
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Twende",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).primaryColor,
               ),
             ),
-          ),
-          const SizedBox(height: 24),
-          Text(
-            "$_salutation Dan!",
-            style: const TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Text(
-            "Start your journey today",
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FindPlaceToGo(),
-                  ),
-                ),
-                child: Expanded(
-                  child: _optionCard(
-                    Icons.directions_car,
-                    "Order Car",
-                  ),
+            const SizedBox(height: 16),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Where to?",
+                prefixIcon: const Icon(Icons.search),
+                filled: true,
+                fillColor: Colors.grey[200],
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
                 ),
               ),
-              Expanded(
-                child: InkWell(
-                    onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const FindPlaceToGo(),
+            ),
+            const SizedBox(height: 24),
+            Text(
+              "$_salutation Dan!",
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Text(
+              "Start your journey today",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+              ),
+            ),
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FindPlaceToGo(),
+                    ),
+                  ),
+                  child: Expanded(
+                    child: _optionCard(
+                      Icons.directions_car,
+                      "Order Car",
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                      onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const FindPlaceToGo(),
+                            ),
                           ),
-                        ),
-                    child: _optionCard(Icons.two_wheeler, "Order Boda")),
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-          _promotionCard(),
-        ],
-      ),
+                      child: _optionCard(Icons.two_wheeler, "Order Boda")),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            _promotionCard(),
+          ],
+        ),
       ),
     );
   }

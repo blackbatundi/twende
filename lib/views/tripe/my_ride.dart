@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 import 'package:twende/views/tripe/tripe_detail.dart';
 
 class MyRide extends StatefulWidget {
@@ -25,20 +27,17 @@ class _MyRideState extends State<MyRide> {
                 color: Theme.of(context).primaryColor,
               ),
             ),
-            const SizedBox(height: 16),
+          AppStyle.SPACING_LG.heightBox,
             Expanded(
               child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ...List.generate(
-                        15,
-                        (index) => tripe(),
-                      )
-                    ],
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ...List.generate(
+                      15,
+                      (index) => tripe(),
+                    )
+                  ],
                 ),
               ),
             ),

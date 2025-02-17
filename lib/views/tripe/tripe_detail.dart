@@ -88,7 +88,7 @@ class _TripeDetailState extends State<TripeDetail> {
               padding: const EdgeInsets.only(top: 10),
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(15.0),

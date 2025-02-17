@@ -11,7 +11,7 @@ import 'package:twende/services/style.dart';
 import 'package:twende/utils/app_indicator.dart';
 import 'package:twende/utils/button.dart';
 import 'package:twende/views/auth/login_page.dart';
-import 'package:twende/views/home/home.dart';
+import 'package:twende/views/home/app_screen.dart';
 
 class OtpPage extends StatefulWidget {
   static String routeName = "/OtpPage";

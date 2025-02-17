@@ -56,10 +56,10 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
               TabBarView(
                 controller: _tabController,
                 physics: const NeverScrollableScrollPhysics(),
-                children: [
+                children: const [
                   HomeScreen(),
-                  const MyRide(),
-                  const Settings(),
+                  MyRide(),
+                  Settings(),
                 ],
               ),
               Align(

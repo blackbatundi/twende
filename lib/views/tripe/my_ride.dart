@@ -27,7 +27,7 @@ class _MyRideState extends State<MyRide> {
                 color: Theme.of(context).primaryColor,
               ),
             ),
-          AppStyle.SPACING_LG.heightBox,
+            AppStyle.SPACING_LG.heightBox,
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -63,14 +63,7 @@ class _MyRideState extends State<MyRide> {
         padding: const EdgeInsets.only(top: 10),
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(.16),
-              offset: const Offset(0, 3),
-              blurRadius: 5,
-            ),
-          ],
+          borderRadius: BorderRadius.circular(8),
         ),
         child: const Padding(
           padding: EdgeInsets.all(15.0),

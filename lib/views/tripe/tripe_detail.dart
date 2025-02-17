@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 
 class TripeDetail extends StatefulWidget {
   const TripeDetail({super.key});
@@ -77,7 +79,7 @@ class _TripeDetailState extends State<TripeDetail> {
               ],
             ),
           ),
-          const SizedBox(height: 16),
+          AppStyle.SPACING_LG.heightBox,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(

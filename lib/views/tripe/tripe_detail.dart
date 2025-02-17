@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:twende/services/app_setting.dart';
 import 'package:twende/services/extentions.dart';
 import 'package:twende/services/style.dart';
 

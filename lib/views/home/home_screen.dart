@@ -117,16 +117,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: InkWell(
-                      onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const FindPlaceToGo(),
-                            ),
+                InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FindPlaceToGo(),
                           ),
-                      child: _optionCard(Icons.two_wheeler, "Order Boda")),
-                ),
+                        ),
+                    child: _optionCard(Icons.two_wheeler, "Order Boda")),
               ],
             ),
             const SizedBox(height: 24),
@@ -140,9 +138,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _optionCard(IconData icon, String label) {
     return Container(
       height: 100,
-      margin: const EdgeInsets.symmetric(horizontal: 4),
+      //  width: 200,
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(

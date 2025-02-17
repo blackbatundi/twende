@@ -1,11 +1,8 @@
 // ignore_for_file: unnecessary_type_check
 
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:twende/views/home/find_place_to_go.dart';
 import 'package:twende/views/setting/setting.dart';
 import 'package:twende/views/tripe/my_ride.dart';
 
@@ -28,7 +25,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> with SingleTickerProviderStateMixin {
-
   DateTime? startDate;
   DateTime? endDate;
   TabController? _tabController;
@@ -75,10 +71,6 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       ),
     );
   }
-
-
-
-
 
   Widget bottomNavigation() {
     return Container(

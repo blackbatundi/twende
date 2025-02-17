@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:twende/views/home/home_screen.dart';
 import 'package:twende/views/setting/setting.dart';
 import 'package:twende/views/tripe/my_ride.dart';
 
@@ -56,7 +57,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
                 controller: _tabController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  _homeTab(context),
+                  HomeScreen(),
                   const MyRide(),
                   const Settings(),
                 ],

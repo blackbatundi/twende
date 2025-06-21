@@ -39,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void _updateSalutation() {
     final hour = DateTime.now().hour;
     String newSalutation;
-
     if (hour < 12) {
       newSalutation = AppLocalizations.of(context)!.greetings1;
     } else if (hour < 18) {

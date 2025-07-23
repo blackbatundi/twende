@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:twende/services/extentions.dart';
+import 'package:twende/services/style.dart';
 
 class TripeDetail extends StatefulWidget {
   const TripeDetail({super.key});
@@ -15,7 +17,7 @@ class _TripeDetailState extends State<TripeDetail> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 16),
+          AppStyle.SPACING_LG.heightBox,
           Expanded(
             child: Stack(
               children: [
@@ -77,7 +79,7 @@ class _TripeDetailState extends State<TripeDetail> {
               ],
             ),
           ),
-          const SizedBox(height: 16),
+          AppStyle.SPACING_LG.heightBox,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
@@ -88,14 +90,7 @@ class _TripeDetailState extends State<TripeDetail> {
               padding: const EdgeInsets.only(top: 10),
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(.16),
-                    offset: const Offset(0, 3),
-                    blurRadius: 5,
-                  ),
-                ],
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -120,7 +115,7 @@ class _TripeDetailState extends State<TripeDetail> {
               ),
             ),
           ),
-          const SizedBox(height: 16),
+          AppStyle.SPACING_LG.heightBox,
         ],
       ),
     );

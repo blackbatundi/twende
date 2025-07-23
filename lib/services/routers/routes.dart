@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:twende/views/auth/login_page.dart';
 import 'package:twende/views/auth/otp_page.dart';
-import 'package:twende/views/home/home.dart';
+import 'package:twende/views/home/app_screen.dart';
 import 'package:twende/views/start/splash_screen.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {

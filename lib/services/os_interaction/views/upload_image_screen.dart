@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, duplicate_ignore, use_build_context_synchronously
+
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -91,6 +93,7 @@ class _UploadFileScreenState extends State<UploadFileScreen> {
                           width: widget.width,
                           decoration: BoxDecoration(
                             color:
+                                // ignore: deprecated_member_use
                                 Theme.of(context).disabledColor.withOpacity(.7),
                             borderRadius: BorderRadius.all(
                               Radius.circular(
